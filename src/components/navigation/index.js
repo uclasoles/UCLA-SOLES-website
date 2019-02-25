@@ -4,10 +4,18 @@ import solessun from './soles-sun.png';
 import './agency.css';
 
 import SignOutButton from '../signout'; 
+import { TestBankButton } from '../testbank';
 import * as ROUTES from '../../constants/routes';
+import { AuthUserContext } from '../session';
 
-const Navigation = ({ authUser }) => (
-  <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
+const Navigation = () => (
+  <div>
+    <AuthUserContext.Consumer>
+      {authUser =>
+        authUser ? <NavigationAuth /> : <NavigationNonAuth />
+      }
+    </AuthUserContext.Consumer>
+  </div>
 );
 
 const NavigationAuth = () => (
@@ -16,7 +24,7 @@ const NavigationAuth = () => (
       <a className="navbar-brand js-scroll-trigger" href="#page-top"><img src={solessun} alt = "Soles Sun" style={{height: '75px'}} /></a>
 
       <div className="dropdown">
-          <button className="dropbtn"><Link to={ROUTES.STUDENTS}>Students</Link></button>
+          <Link to={ROUTES.STUDENTS}><button className="dropbtn">Students</button></Link>
           <div className="dropdown-content">
             <a href="#">How to Join</a>
             <a href="#">Calendar</a>
@@ -25,11 +33,11 @@ const NavigationAuth = () => (
         </div>
 
         <div className="dropdown">
-          <button className="dropbtn"><Link to={ROUTES.COMPANIES}>Companies</Link></button>
+          <Link to={ROUTES.COMPANIES}><button className="dropbtn">Companies</button></Link>
         </div>
 
         <div className="dropdown">
-          <button className="dropbtn"><Link to={ROUTES.ABOUT}>About</Link></button>
+          <Link to={ROUTES.ABOUT}><button className="dropbtn">About</button></Link>
           <div className="dropdown-content">
             <a href="#">What We Do</a>
             <a href="#">Sponsors</a>
@@ -38,10 +46,10 @@ const NavigationAuth = () => (
         </div>
 
         <div className="dropdown">
-          <button className="dropbtn"><Link to={ROUTES.ABOUT}>Member Services</Link></button>
+          <Link to={ROUTES.ABOUT}><button className="dropbtn">Member Services</button></Link>
           <div className="dropdown-content">
-            <a href="#">Profile</a>
-            <a href="#">Test Bank</a>
+            <a href="#"><Link to={ROUTES.PROFILE}>Profile</Link></a>
+            <a href="#"><Link to={ROUTES.TESTBANK}>Test Bank</Link></a>
             <SignOutButton />
           </div>
         </div>       
@@ -57,7 +65,7 @@ const NavigationNonAuth = () => (
       <a className="navbar-brand js-scroll-trigger" href="#page-top"><img src={solessun} alt = "Soles Sun" style={{height: '75px'}} /></a>
 
       <div className="dropdown">
-          <button className="dropbtn"><Link to={ROUTES.STUDENTS}>Students</Link></button>
+          <Link to={ROUTES.STUDENTS}><button className="dropbtn">Students</button></Link>
           <div className="dropdown-content">
             <a href="#">How to Join</a>
             <a href="#">Calendar</a>
@@ -66,11 +74,11 @@ const NavigationNonAuth = () => (
         </div>
 
         <div className="dropdown">
-          <button className="dropbtn"><Link to={ROUTES.COMPANIES}>Companies</Link></button>
+          <Link to={ROUTES.COMPANIES}><button className="dropbtn">Companies</button></Link>
         </div>
 
         <div className="dropdown">
-          <button className="dropbtn"><Link to={ROUTES.ABOUT}>About</Link></button>
+          <Link to={ROUTES.ABOUT}><button className="dropbtn">About</button></Link>
           <div className="dropdown-content">
             <a href="#">What We Do</a>
             <a href="#">Sponsors</a>
@@ -79,7 +87,7 @@ const NavigationNonAuth = () => (
         </div>
 
         <div className="dropdown">
-          <button className="dropbtn"><Link to={ROUTES.SIGN_IN}>Login</Link></button>
+          <Link to={ROUTES.SIGN_IN}><button className="dropbtn">Login</button></Link>
         </div>        
             
         <div className="collapse navbar-collapse" id="navbarResponsive"></div>

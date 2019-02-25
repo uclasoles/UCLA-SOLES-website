@@ -1,9 +1,4 @@
-import React from 'react';
+import AuthUserContext from './context';
+import withAuthentication from './withAuthentication';
 
-const App = () => (
-  <div>
-    <h1>Session</h1>
-  </div>
-);
-
-export default App;
+export { AuthUserContext, withAuthentication };
