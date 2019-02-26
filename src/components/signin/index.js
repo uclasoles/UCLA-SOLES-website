@@ -9,7 +9,19 @@ import * as ROUTES from '../../constants/routes';
 
 // signinpage component that displays on signinpage
 const SignInPage = () => (
-  <div>
+	
+	
+	<div>
+		<header className="masthead">
+			<div className="container">
+				<div className="intro-text">
+					<div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
+					<div className="intro-heading text-uppercase">SOLES at UCLA</div>
+					<a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#whatwedo">Learn More</a>
+				</div>
+			</div>
+		</header>
+
     <h1>Sign In</h1>
     <SignInForm />
     <PasswordForgetLink />
