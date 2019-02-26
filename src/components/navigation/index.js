@@ -46,7 +46,7 @@ const NavigationAuth = () => (
         </div>
 
         <div className="dropdown">
-          <Link to={ROUTES.ABOUT}><button className="dropbtn">Member Services</button></Link>
+          <button className="dropbtn">Member Services</button>
           <div className="dropdown-content">
             <a href="#"><Link to={ROUTES.PROFILE}>Profile</Link></a>
             <a href="#"><Link to={ROUTES.TESTBANK}>Test Bank</Link></a>
