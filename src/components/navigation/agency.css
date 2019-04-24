@@ -80,10 +80,14 @@ section h3.section-subheading {
 }
 
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: rgb(21, 25, 29);
   color: white;
-  padding: 16px;
-  font-size: 16px;
+ 
+  
+  top: 0;
+  z-index: 99;
+  padding: 36px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
 }
@@ -96,7 +100,7 @@ section h3.section-subheading {
 .dropdown-content {
   display: none;
   position: absolute;
-  right: 0;
+  left: 0;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -112,7 +116,7 @@ section h3.section-subheading {
 
 .dropdown-content a:hover {background-color: #f1f1f1;}
 .dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .dropbtn {color: #dfc221;}
 
 ::-moz-selection {
   background: #fed136;

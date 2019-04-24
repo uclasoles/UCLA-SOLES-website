@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
+import './agency.css';
 
 import { SignUpLink } from '../signup';
 import { PasswordForgetLink } from '../passwordforget';
@@ -13,20 +14,30 @@ const SignInPage = () => (
 	
 	<div>
 		<header className="masthead">
-			<div className="container">
-				<div className="intro-text">
-					<div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
-					<div className="intro-heading text-uppercase">SOLES at UCLA</div>
-					<a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#whatwedo">Learn More</a>
-				</div>
+			<br></br><br></br><br></br>
+			<div className="container py-5">
+						<div className="row">
+							<div className="col-md-12">
+									<div className="row">
+											<div className="col-md-6 mx-auto">
+													<div className="card rounded-0">
+															<div className="card-header">
+																	<h3 className="mb-0">Login</h3>
+															</div>
+															<div className="card-body">
+																<SignInForm />
+																<PasswordForgetLink />
+    														<SignUpLink />
+															</div>
+													</div>
+											</div>
+									</div>
+							</div>
+					</div>
 			</div>
 		</header>
+	</div>
 
-    <h1>Sign In</h1>
-    <SignInForm />
-    <PasswordForgetLink />
-    <SignUpLink />
-  </div>
 );
 
 // the intial state of the submit form
@@ -104,5 +115,3 @@ const SignInForm = compose(
 export default SignInPage;
 
 export { SignInForm };
-
-
