@@ -31,19 +31,23 @@ const INITIAL_STATE = {
   career: 'UGRAD',
   major: '',
   year: '',
+  grad_year: '',
+  company: '',
   error: null,
 };
 
 class SignUpFormBase extends Component {
   constructor(props) {
-   super(props);
+    super(props);
 
-   this.state = {...INITIAL_STATE};
-   this.displayMajors = this.displayMajors.bind(this);
+    this.state = {...INITIAL_STATE};
+    this.displayMajors = this.displayMajors.bind(this);
+
+    this.thisYear = (new Date()).getFullYear();
   }
 
   onSubmit = event => {
-	 const { firstname, lastname, email, passwordOne, major, career, year} = this.state;
+	 const { firstname, lastname, email, passwordOne, major, career, year, grad_year, company} = this.state;
    this.props.firebase
     .doCreateUserWithEmailAndPassword(email, passwordOne)
     .then(authUser => {
@@ -55,7 +59,8 @@ class SignUpFormBase extends Component {
         major,
         career,
         year,
-        roles: {member: true},
+        grad_year,
+        company,
       });
     })
     .then(authUser => {
@@ -85,7 +90,7 @@ class SignUpFormBase extends Component {
         this.displayMajors(majors);
       }.bind(this))
     } else {
-      this.displayMajors(majors);
+      this.displayMajors(this.props.firebase.majors_cached);
     }
   }
 
@@ -110,17 +115,32 @@ class SignUpFormBase extends Component {
      major,
      career,
      year,
+     grad_year,
+     company,
 	   error,
 	 } = this.state;
 
    const isStudent = career === 'UGRAD' || career === 'GRAD';
+
+   const isAlumni = career === 'ALUM';
+
+   const isIndustry = career === 'ALUM' || career === 'IND';
 
    const isInvalid = passwordOne !== passwordTwo 
                     || passwordOne === '' 
                     || email === '' 
                     || firstname === '' 
                     || lastname === ''
-                    || (isStudent && (major === '' || year === ''));
+                    || (isStudent && (major === '' || year === ''))
+                    || (isAlumni && grad_year === '')
+                    || (isIndustry && company === '');
+
+    // create the year dropdown menu
+    const options = [];
+    for (let i = 0; i <= 70; i++) {
+      const year = this.thisYear - i;
+      options.push(<option value={year}>{year}</option>);
+    }
 
 	 return (
 		<form onSubmit={this.onSubmit}>
@@ -185,6 +205,23 @@ class SignUpFormBase extends Component {
         <option value="7">Seventh Year</option>
         <option value="8">Eighth Year+</option>
       </select>
+      <br></br>
+    </div>
+    <div className={isAlumni ? "" : "hidden"}>
+      <select id="grad_year" name="grad_year" onChange={this.onChange} value={grad_year}>
+        <option value="" disabled>Please select a graduation year...</option>
+          {options}
+      </select>
+      <br></br>
+    </div>
+    <div className={isIndustry ? "" : "hidden"}>
+      <input
+        name="company"
+        value={company}
+        onChange={this.onChange}
+        type="text"
+        placeholder="Current Employer"
+      />
       <br></br>
     </div>
     <button disabled={isInvalid} type="submit">Sign Up</button>
