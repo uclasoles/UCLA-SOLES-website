@@ -1,6 +1,6 @@
 import app from 'firebase/app';
 import 'firebase/auth';
-import 'firebase/database';
+import 'firebase/firestore';
 
 const prodConfig = {
   apiKey: process.env.REACT_APP_PROD_API_KEY,
@@ -20,15 +20,15 @@ const devConfig = {
   messagingSenderId: process.env.REACT_APP_DEV_MESSAGING_SENDER_ID,
 };
 
-const config =
-  process.env.NODE_ENV === 'production' ? prodConfig : devConfig;
+const config = process.env.NODE_ENV === 'production' ? prodConfig : devConfig;
 
 class Firebase {
   constructor() {
     app.initializeApp(config);
 
     this.auth = app.auth();
-    this.db = app.database();
+    this.db = app.firestore();
+    this.majors_cached = null;
   }
 
   // *** Auth API ***
@@ -47,9 +47,11 @@ class Firebase {
 
 
   // *** Database API ***
-  user = uid => this.db.ref(`users/${uid}`);
+  user = uid => this.db.collection("users").doc(`${uid}`);
 
-  users = () => this.db.ref('users');
+  users = () => this.db.collection("users");
+
+  majors = () => this.db.collection("majors").orderBy("name");
 }
 
 export default Firebase;

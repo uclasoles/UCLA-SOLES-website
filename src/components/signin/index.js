@@ -9,8 +9,6 @@ import * as ROUTES from '../../constants/routes';
 
 // signinpage component that displays on signinpage
 const SignInPage = () => (
-	
-	
 	<div>
 		<header className="masthead">
 			<div className="container">

@@ -28,30 +28,35 @@ const INITIAL_STATE = {
   email: '',
   passwordOne: '',
   passwordTwo: '',
+  career: 'UGRAD',
+  major: '',
+  year: '',
   error: null,
 };
 
 class SignUpFormBase extends Component {
   constructor(props) {
-	 super(props);
+   super(props);
 
-	 this.state = {...INITIAL_STATE}
+   this.state = {...INITIAL_STATE};
+   this.displayMajors = this.displayMajors.bind(this);
   }
 
   onSubmit = event => {
-	 const { firstname, lastname, email, passwordOne } = this.state;
-    this.props.firebase
+	 const { firstname, lastname, email, passwordOne, major, career, year} = this.state;
+   this.props.firebase
     .doCreateUserWithEmailAndPassword(email, passwordOne)
     .then(authUser => {
-      // Create a user in your Firebase realtime database
-      return this.props.firebase
-        .user(authUser.user.uid)
-        .set({
-          firstname,
-          lastname,
-          email,
-          roles: {member: 'true'},
-        });
+      // add new user to firestore
+      return this.props.firebase.db.doc(`users/${authUser.user.uid}`).set({
+        firstname,
+        lastname,
+        email,
+        major,
+        career,
+        year,
+        roles: {member: true},
+      });
     })
     .then(authUser => {
         this.setState({ ...INITIAL_STATE });
@@ -66,6 +71,35 @@ class SignUpFormBase extends Component {
 	 this.setState({ [event.target.name]: event.target.value });
   };
 
+  componentDidMount() {
+    // if we haven't already requested the major data from firebase
+    if (this.props.firebase.majors_cached === null) {
+      var majors = []
+      this.props.firebase.majors().get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+          majors.push(doc.data());
+        });
+        console.log(`[INFO] Received ${majors.length} major documents from FireStore for sign up form.`);
+        // updates the cached version and displays the majors
+        this.props.firebase.majors_cached = majors;
+        this.displayMajors(majors);
+      }.bind(this))
+    } else {
+      this.displayMajors(majors);
+    }
+  }
+
+  // adds majors to the dropdown menu
+  displayMajors(majors) {
+    var dropdown = document.getElementById("major");
+    for (var i = 0; i < majors.length; i++) {
+      var new_item = document.createElement("option");
+      new_item.innerHTML = majors[i].name;
+      new_item.value = majors[i].abbr;
+      dropdown.appendChild(new_item);
+    }
+  }
+
   render() {
 	 const {
 	   firstname,
@@ -73,11 +107,21 @@ class SignUpFormBase extends Component {
 	   email,
 	   passwordOne,
 	   passwordTwo,
+     major,
+     career,
+     year,
 	   error,
 	 } = this.state;
 
-   const isInvalid = passwordOne !== passwordTwo || passwordOne === '' || email === '' || firstname === '' || lastname === '';
-	
+   const isStudent = career === 'UGRAD' || career === 'GRAD';
+
+   const isInvalid = passwordOne !== passwordTwo 
+                    || passwordOne === '' 
+                    || email === '' 
+                    || firstname === '' 
+                    || lastname === ''
+                    || (isStudent && (major === '' || year === ''));
+
 	 return (
 		<form onSubmit={this.onSubmit}>
 		<input
@@ -87,6 +131,7 @@ class SignUpFormBase extends Component {
       type="text"
       placeholder="First Name"
     />
+    <br></br>
     <input
       name="lastname"
       value={lastname}
@@ -94,13 +139,15 @@ class SignUpFormBase extends Component {
       type="text"
       placeholder="Last Name"
     />
+    <br></br>
     <input
       name="email"
       value={email}
       onChange={this.onChange}
       type="text"
-      placeholder="Email Address"
+      placeholder="Email"
     />
+    <br></br>
     <input
       name="passwordOne"
       value={passwordOne}
@@ -108,6 +155,7 @@ class SignUpFormBase extends Component {
       type="password"
       placeholder="Password"
     />
+    <br></br>
     <input
       name="passwordTwo"
       value={passwordTwo}
@@ -115,6 +163,30 @@ class SignUpFormBase extends Component {
       type="password"
       placeholder="Confirm Password"
     />
+    <br></br>
+    <input name="career" value="UGRAD" checked={this.state.career === "UGRAD"} onChange={this.onChange} type="radio"/><label htmlFor="UGRAD">Undergraduate</label>
+    <input name="career" value="GRAD" checked={this.state.career === "GRAD"} onChange={this.onChange} type="radio"/><label htmlFor="GRAD">Graduate</label>
+    <input name="career" value="ALUM" checked={this.state.career === "ALUM"} onChange={this.onChange} type="radio"/><label htmlFor="ALUM">Alumni</label>
+    <input name="career" value="IND" checked={this.state.career === "IND"} onChange={this.onChange} type="radio"/><label htmlFor="IND">Industry</label>
+    <br></br>
+    <div className={isStudent ? "" : "hidden"}>
+      <select id="major" name="major" onChange={this.onChange} value={major}>
+        <option value="" disabled>Please select major...</option>
+      </select>
+      <br></br>
+      <select id="year" name="year" onChange={this.onChange} value={year}>
+        <option value="" disabled>Please select a year...</option>
+        <option value="1">First Year</option>
+        <option value="2">Second Year</option>
+        <option value="3">Third Year</option>
+        <option value="4">Fourth Year</option>
+        <option value="5">Fifth Year</option>
+        <option value="6">Sixth Year</option>
+        <option value="7">Seventh Year</option>
+        <option value="8">Eighth Year+</option>
+      </select>
+      <br></br>
+    </div>
     <button disabled={isInvalid} type="submit">Sign Up</button>
 
     {error && <p>{error.message}</p>}
