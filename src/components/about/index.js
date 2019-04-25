@@ -9,7 +9,7 @@ const AboutPage = () => (
         <div className="intro-text">
           <div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
           <div className="intro-heading text-uppercase">SOLES at UCLA</div>
-          <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#whatwedo">Learn More</a>
+          <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#what we do">Learn More</a>
         </div>
       </div>
   </header>
@@ -17,7 +17,9 @@ const AboutPage = () => (
   <div className="container">
       <div className="row">
         <div className="col-lg-12 text-center">
-          <h2 className="section-heading text-uppercase">What We Do</h2>
+          <a id = "what we do">
+            <h2 className="section-heading text-uppercase"><br></br><br></br><br></br><br></br>What We Do</h2>
+          </a>
         </div>
       </div>
         <div className="row text-center">
