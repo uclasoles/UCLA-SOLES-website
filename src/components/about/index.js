@@ -94,7 +94,7 @@ const AboutPage = () => (
                 </div>
               </div>
               <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-                <img className="img-fluid" style={{filter: 'invert(1)', verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/aerospace-logo.png" alt />
+                <img className="img-fluid" style={{filter: 'invert(1)', verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/aerospace-logo.png" alt="Aerospace Company logo" />
               </div>
             </a>
             <div className="portfolio-caption">
@@ -110,7 +110,7 @@ const AboutPage = () => (
                 </div>
               </div>
               <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-              <img className="img-fluid center-block" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/boeing-logo.png" alt />
+              <img className="img-fluid center-block" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/boeing-logo.png" alt="Boeing Logo" />
               </div>
             </a>
             <div className="portfolio-caption">
@@ -126,7 +126,7 @@ const AboutPage = () => (
                 </div>
               </div>
               <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-              <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/chevron-logo.png" alt />
+              <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/chevron-logo.png" alt="Chevron Logo" />
               </div>
             </a>
             <div className="portfolio-caption">
@@ -142,7 +142,7 @@ const AboutPage = () => (
                 </div>
               </div>
               <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-              <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/google-logo.png" alt />
+              <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/google-logo.png" alt="Google logo" />
               </div>
             </a>
             <div className="portfolio-caption">
@@ -158,7 +158,7 @@ const AboutPage = () => (
                 </div>
               </div>
               <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-                <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/phillips66-logo.png" alt />
+                <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/phillips66-logo.png" alt="Phillips 66 Logo" />
               </div>
             </a>
             <div className="portfolio-caption">
@@ -227,7 +227,7 @@ const AboutPage = () => (
             <ul className="timeline">
               <li className="timeline-inverted">
                 <div className="timeline-image">
-                  <img src="/imgs/shpe-logo.jpg" className="rounded-circle img-fluid" alt />
+                  <img src="/imgs/shpe-logo.jpg" className="rounded-circle img-fluid" alt="shpe logo"/>
                 </div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
@@ -241,7 +241,7 @@ const AboutPage = () => (
               </li>
               <li>
                 <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="/imgs/soles-sun-square.png" alt />
+                  <img className="rounded-circle img-fluid" src="/imgs/soles-sun-square.png" alt="rounded-circle" />
                 </div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
@@ -255,7 +255,7 @@ const AboutPage = () => (
               </li>
               <li className="timeline-inverted">
                 <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="/img/about/2.jpg" alt />
+                  <img className="rounded-circle img-fluid" src="/img/about/2.jpg" alt="rounded-circle" />
                 </div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
@@ -269,7 +269,7 @@ const AboutPage = () => (
               </li>
               <li>
                 <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="img/about/3.jpg" alt />
+                  <img className="rounded-circle img-fluid" src="img/about/3.jpg" alt="rounded-circle" />
                 </div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
@@ -283,7 +283,7 @@ const AboutPage = () => (
               </li>
               <li className="timeline-inverted">
                 <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="img/about/4.jpg" alt />
+                  <img className="rounded-circle img-fluid" src="img/about/4.jpg" alt="rounded-circle" />
                 </div>
                 <div className="timeline-panel">
                   <div className="timeline-heading">
