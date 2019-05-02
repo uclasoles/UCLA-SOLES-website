@@ -154,7 +154,7 @@ class SignUpFormBase extends Component {
     const options = [];
     for (let i = 0; i <= 70; i++) {
       const year = this.thisYear - i;
-      options.push(<option value={year}>{year}</option>);
+      options.push(<option key={year.toString()} value={year}>{year}</option>);
     }
 
 	 return (
@@ -199,10 +199,10 @@ class SignUpFormBase extends Component {
       placeholder="Confirm Password"
     />
     <br></br>
-    <input name="career" value="UGRAD" checked={this.state.career === "UGRAD"} onChange={this.onChange} type="radio"/><label htmlFor="UGRAD">Undergraduate</label>
-    <input name="career" value="GRAD" checked={this.state.career === "GRAD"} onChange={this.onChange} type="radio"/><label htmlFor="GRAD">Graduate</label>
-    <input name="career" value="ALUM" checked={this.state.career === "ALUM"} onChange={this.onChange} type="radio"/><label htmlFor="ALUM">Alumni</label>
-    <input name="career" value="IND" checked={this.state.career === "IND"} onChange={this.onChange} type="radio"/><label htmlFor="IND">Industry</label>
+    <input name="career" value="UGRAD" checked={this.state.career === "UGRAD"} onChange={this.onChange} type="radio"/><label style={{color: 'black', margin: '10px'}} htmlFor="UGRAD">Undergraduate </label>
+    <input name="career" value="GRAD" checked={this.state.career === "GRAD"} onChange={this.onChange} type="radio"/><label style={{color: 'black', margin: '10px'}} htmlFor="GRAD">Graduate</label>
+    <input name="career" value="ALUM" checked={this.state.career === "ALUM"} onChange={this.onChange} type="radio"/><label style={{color: 'black', margin: '10px'}} htmlFor="ALUM">Alumni</label>
+    <input name="career" value="IND" checked={this.state.career === "IND"} onChange={this.onChange} type="radio"/><label style={{color: 'black', margin: '10px'}} htmlFor="IND">Industry</label>
     <br></br>
     <div className={isStudent ? "" : "hidden"}>
       <select id="major" name="major" onChange={this.onChange} value={major}>
