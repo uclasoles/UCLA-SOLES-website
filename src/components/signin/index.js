@@ -13,26 +13,29 @@ const SignInPage = () => (
 	<div>
 		<header className="masthead">
 			<br></br><br></br><br></br>
-			<div className="container py-5">
-						<div className="row">
-							<div className="col-md-12">
-									<div className="row">
-											<div className="col-md-6 mx-auto">
-													<div className="card rounded-0">
-															<div className="card-header">
-																	<h3 className="mb-0">Login</h3>
-															</div>
-															<div className="card-body">
-																<SignInForm />
-																<PasswordForgetLink />
-    														<SignUpLink />
-															</div>
-													</div>
-											</div>
+			<div className="card-container">
+				<div className="container py-5">
+					<div className="row">
+						<div className="col-md-12">
+							<div className="row">
+								<div className="col-md-6 mx-auto">
+									<div className="card rounded-5">
+										<div className="card-header">
+											<h3 className="card-header-text">Login</h3>
+										</div>
+										<div className="card-body">
+											<SignInForm />
+											<PasswordForgetLink />
+	    									<SignUpLink />
+										</div>
 									</div>
+								</div>
 							</div>
+						</div>
 					</div>
+				</div>
 			</div>
+			<br></br><br></br><br></br>
 		</header>
 	</div>
 );

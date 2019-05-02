@@ -80,10 +80,8 @@ section h3.section-subheading {
 }
 
 .dropbtn {
-  background-color: rgb(21, 25, 29);
+  background-color: rgba(0, 0, 0, 0);
   color: white;
- 
-  
   top: 0;
   z-index: 99;
   padding: 36px;
@@ -137,7 +135,7 @@ img::-moz-selection {
 }
 
 #mainNav {
-  background-color: #212529;
+  background-color: rgb(21, 25, 29);
 }
 
 #mainNav .navbar-toggler {

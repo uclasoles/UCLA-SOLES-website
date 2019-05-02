@@ -4,7 +4,7 @@ import './agency.css';
 const AboutPage = () => (
 <div className="about">
   
-  <header className="masthead">
+  <header id = "page-top" className="masthead">
       <div className="container">
         <div className="intro-text">
           <div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
@@ -14,7 +14,7 @@ const AboutPage = () => (
       </div>
   </header>
 
-  <div className="container">
+  <div id = "what-we-do" className="container">
       <div className="row">
         <div className="col-lg-12 text-center">
           <a id = "what we do">
@@ -78,7 +78,7 @@ const AboutPage = () => (
       <div className="container">
         <div className="row">
           <div className="col-lg-12 text-center">
-            <h2 className="section-heading text-uppercase">Sponsors</h2>
+            <h2 id = "sponsors" className="section-heading text-uppercase">Sponsors</h2>
             <h3 className="section-subheading text-muted">We’d like to extend a special thanks to our corporate sponsors. If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!</h3>
           </div>
         </div>
@@ -214,7 +214,7 @@ const AboutPage = () => (
       </div>
     </section>
 
-    <section id="about">
+    <section id="history">
       <div className="container">
         <div className="row">
           <div className="col-lg-12 text-center">

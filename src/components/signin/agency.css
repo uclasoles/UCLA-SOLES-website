@@ -15,6 +15,18 @@ a:hover {
   color: #fec503;
 }
 
+.card-container {
+    margin-top: 35px;
+    margin-bottom: 150px;
+}
+
+.card-header-text {
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  padding: (150px);
+  color: #000000;
+}
+
 .text-primary {
   color: #fed136 !important;
 }
@@ -25,6 +37,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-size: 16px;
   font-weight: 700;
   color: #011f5a;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
