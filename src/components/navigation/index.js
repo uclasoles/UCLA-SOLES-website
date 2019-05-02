@@ -48,7 +48,7 @@ const NavigationAuth = () => (
         <div className="dropdown">
           <button className="dropbtn">MEMBER SERVICES</button>
           <div className="dropdown-content">
-            <a href="#"><Link to={ROUTES.PROFILE}>PROFILE</Link></a>
+            <a href="#"><Link to={ROUTES.PROFILE}>MY ACCOUNT</Link></a>
             <a href="#"><Link to={ROUTES.TESTBANK}>TEST BANK</Link></a>
             <SignOutButton />
           </div>

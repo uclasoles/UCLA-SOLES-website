@@ -35,7 +35,6 @@ const SignInPage = () => (
 			</div>
 		</header>
 	</div>
-
 );
 
 // the intial state of the submit form
