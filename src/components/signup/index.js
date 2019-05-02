@@ -8,17 +8,32 @@ import * as ROUTES from '../../constants/routes';
 const SignUpPage = () => (
   <div>
     <header className="masthead">
-      <div className="container">
-        <div className="intro-text">
-          <div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
-          <div className="intro-heading text-uppercase">SOLES at UCLA</div>
-          <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#whatwedo">Learn More</a>
+      <br></br><br></br><br></br>
+      <div className="card-container">
+        <div className="container py-5">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="row">
+                <div className="col-md-6 mx-auto">
+                  <div className="card rounded-5">
+                    <div className="card-header">
+                      <h3 className="card-header-text">Sign-Up</h3>
+                    </div>
+                    <div className="card-body">
+                      
+                      <SignUpForm />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <br></br><br></br><br></br>
     </header>
 
-	 <h1>SignUp</h1>
-   <SignUpForm />
+	 
   </div>
 );
 
@@ -87,6 +102,7 @@ class SignUpFormBase extends Component {
       type="text"
       placeholder="First Name"
     />
+    <br></br>
     <input
       name="lastname"
       value={lastname}
@@ -94,6 +110,7 @@ class SignUpFormBase extends Component {
       type="text"
       placeholder="Last Name"
     />
+    <br></br>
     <input
       name="email"
       value={email}
@@ -101,6 +118,7 @@ class SignUpFormBase extends Component {
       type="text"
       placeholder="Email Address"
     />
+    <br></br>
     <input
       name="passwordOne"
       value={passwordOne}
@@ -108,6 +126,7 @@ class SignUpFormBase extends Component {
       type="password"
       placeholder="Password"
     />
+    <br></br>
     <input
       name="passwordTwo"
       value={passwordTwo}

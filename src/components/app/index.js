@@ -19,7 +19,6 @@ const App = () => (
   <Router>
     <div>
       <Navigation />
-      <hr />
       <Route exact path={ROUTES.ABOUT} component={AboutPage} />
       <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route path={ROUTES.SIGN_IN} component={SignInPage} />
