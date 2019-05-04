@@ -32,8 +32,6 @@ const SignUpPage = () => (
       </div>
       <br></br><br></br><br></br>
     </header>
-
-	 
   </div>
 );
 
