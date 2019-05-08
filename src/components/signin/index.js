@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
-import '../../custom.css';
 
 import { withFirebase } from '../firebase';
 import * as ROUTES from '../../constants/routes';
 import { Link } from 'react-router-dom';
 
-// TODO
-// * Add validation to form fields on submission
-// * Look into how to provide feedback from Firebase stuff
-// * Remove dependencies not needed from the top
-
-// bootstrap components
+// bootstrap and css components
+import '../../custom.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+
+// TODO
+// * Add validation to form fields on submission
+// * Look into how to provide user feedback from Firebase calls
 
 // initial state of the form
 const INITIAL_STATE = {
@@ -60,7 +59,7 @@ class SignInPageBase extends Component {
     return (
     	<div id="centered-masthead">
 				<div className="row h-100 justify-content-center align-items-center">
-					<Card>
+					<Card style={{ width:'20rem' }}>
 					  <Card.Header as="h3" style={{ color: 'black' }}>Sign In</Card.Header>
 					  <Card.Body>
 					    <Form onSubmit={this.onSubmit}>
@@ -73,9 +72,9 @@ class SignInPageBase extends Component {
 				        <Button disabled={isInvalid} type="submit" variant='primary' block>Sign In</Button>
 
 				        {error && <p>{error.message}</p>}
-			      </Form>
-						<p><Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link></p>
-						<p style={{color:"black"}}>Don&#8217;t have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link></p>
+			      	</Form>
+							<p><Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link></p>
+							<p style={{color:"black"}}>Don&#8217;t have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link></p>
 					  </Card.Body>
 					</Card>
 				</div>
