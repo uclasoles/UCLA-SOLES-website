@@ -5,35 +5,18 @@ import { compose } from 'recompose';
 import { withFirebase } from '../firebase';
 import * as ROUTES from '../../constants/routes';
 
-const SignUpPage = () => (
-  <div>
-    <header className="masthead">
-      <br></br><br></br><br></br>
-      <div className="card-container">
-        <div className="container py-5">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="row">
-                <div className="col-md-6 mx-auto">
-                  <div className="card rounded-5">
-                    <div className="card-header">
-                      <h3 className="card-header-text">Sign-Up</h3>
-                    </div>
-                    <div className="card-body">
-                      
-                      <SignUpForm />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br></br><br></br><br></br>
-    </header>
-  </div>
-);
+// bootstrap and css components
+import '../../custom.css';
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
+// TODO
+// * Add validation to form fields on submission
+// * Look into better way to provide user feedback from Firebase calls
 
 const INITIAL_STATE = {
   firstname: '',
@@ -49,7 +32,7 @@ const INITIAL_STATE = {
   error: null,
 };
 
-class SignUpFormBase extends Component {
+class SignUpPageBase extends Component {
   constructor(props) {
     super(props);
 
@@ -155,101 +138,90 @@ class SignUpFormBase extends Component {
       options.push(<option key={year.toString()} value={year}>{year}</option>);
     }
 
-	 return (
-		<form onSubmit={this.onSubmit}>
-		<input
-      name="firstname"
-      value={firstname}
-      onChange={this.onChange}
-      type="text"
-      placeholder="First Name"
-    />
-    <br></br>
-    <input
-      name="lastname"
-      value={lastname}
-      onChange={this.onChange}
-      type="text"
-      placeholder="Last Name"
-    />
-    <br></br>
-    <input
-      name="email"
-      value={email}
-      onChange={this.onChange}
-      type="text"
-      placeholder="Email"
-    />
-    <br></br>
-    <input
-      name="passwordOne"
-      value={passwordOne}
-      onChange={this.onChange}
-      type="password"
-      placeholder="Password"
-    />
-    <br></br>
-    <input
-      name="passwordTwo"
-      value={passwordTwo}
-      onChange={this.onChange}
-      type="password"
-      placeholder="Confirm Password"
-    />
-    <br></br>
-    <input name="career" value="UGRAD" checked={this.state.career === "UGRAD"} onChange={this.onChange} type="radio"/><label style={{color: 'black', margin: '10px'}} htmlFor="UGRAD">Undergraduate </label>
-    <input name="career" value="GRAD" checked={this.state.career === "GRAD"} onChange={this.onChange} type="radio"/><label style={{color: 'black', margin: '10px'}} htmlFor="GRAD">Graduate</label>
-    <input name="career" value="ALUM" checked={this.state.career === "ALUM"} onChange={this.onChange} type="radio"/><label style={{color: 'black', margin: '10px'}} htmlFor="ALUM">Alumni</label>
-    <input name="career" value="IND" checked={this.state.career === "IND"} onChange={this.onChange} type="radio"/><label style={{color: 'black', margin: '10px'}} htmlFor="IND">Industry</label>
-    <br></br>
-    <div className={isStudent ? "" : "hidden"}>
-      <select id="major" name="major" onChange={this.onChange} value={major}>
-        <option value="" disabled>Please select major...</option>
-      </select>
-      <br></br>
-      <select id="year" name="year" onChange={this.onChange} value={year}>
-        <option value="" disabled>Please select a year...</option>
-        <option value="1">First Year</option>
-        <option value="2">Second Year</option>
-        <option value="3">Third Year</option>
-        <option value="4">Fourth Year</option>
-        <option value="5">Fifth Year</option>
-        <option value="6">Sixth Year</option>
-        <option value="7">Seventh Year</option>
-        <option value="8">Eighth Year+</option>
-      </select>
-      <br></br>
-    </div>
-    <div className={isAlumni ? "" : "hidden"}>
-      <select id="grad_year" name="grad_year" onChange={this.onChange} value={grad_year}>
-        <option value="" disabled>Please select a graduation year...</option>
-          {options}
-      </select>
-      <br></br>
-    </div>
-    <div className={isIndustry ? "" : "hidden"}>
-      <input
-        name="company"
-        value={company}
-        onChange={this.onChange}
-        type="text"
-        placeholder="Current Employer"
-      />
-      <br></br>
-    </div>
-    <button disabled={isInvalid} type="submit">Sign Up</button>
+  	 return (
+      <div id="centered-masthead">
+        <div className="row h-100 justify-content-center align-items-center">
+          <Card style={{ width:'25rem' }}>
+            <Card.Header as="h3" style={{ color: 'black' }}>Sign Up</Card.Header>
+            <Card.Body>
+              <Form onSubmit={this.onSubmit}>
 
-    {error && <p>{error.message}</p>}
-    </form>
-	 );
+                <Form.Group controlId="formSignUpEmail">
+                  <Form.Control name="email" value={email} onChange={this.onChange} type="email" placeholder="Email Address"/>
+                </Form.Group>
+
+                <Form.Row>
+                  <Form.Group as={Col} controlId="formSignUpFirstName">
+                    <Form.Control name="firstname" value={firstname} onChange={this.onChange} type="text" placeholder="First Name"/>
+                  </Form.Group>
+
+                  <Form.Group as={Col} controlId="formSignUpLastName">
+                    <Form.Control name="lastname" value={lastname} onChange={this.onChange} type="text" placeholder="Last Name"/>
+                  </Form.Group>
+                </Form.Row>
+
+                <Form.Group controlId="formSignUpPassOne">
+                  <Form.Control name="passwordOne" value={passwordOne} onChange={this.onChange} type="password" placeholder="Password"/>
+                </Form.Group>
+
+                <Form.Group controlId="formSignUpPassTwo">
+                  <Form.Control name="passwordTwo" value={passwordTwo} onChange={this.onChange} type="password" placeholder="Confirm Password"/>
+                </Form.Group>
+
+                <Form.Group controlId="formSignUpCareer">
+                  <ButtonGroup aria-label="Career">
+                    <Button name="career" value="UGRAD" variant="secondary" size="sm" disabled={this.state.career === "UGRAD"} onClick={this.onChange} type="button">Undergraduate</Button>
+                    <Button name="career" value="GRAD" variant="secondary" size="sm" disabled={this.state.career === "GRAD"} onClick={this.onChange} type="button">Graduate</Button>
+                    <Button name="career" value="ALUM" variant="secondary" size="sm" disabled={this.state.career === "ALUM"} onClick={this.onChange} type="button">Alumni</Button>
+                    <Button name="career" value="IND" variant="secondary" size="sm" disabled={this.state.career === "IND"} onClick={this.onChange} type="button">Industry</Button>
+                  </ButtonGroup>
+                </Form.Group>
+
+                <Form.Group className={isStudent ? "" : "hidden"}>
+                  <Form.Control as="select" id="major" name="major" onChange={this.onChange} value={major}>
+                    <option value="" disabled>Please select major...</option>
+                  </Form.Control>
+                </Form.Group>
+
+                <Form.Group className={isStudent ? "" : "hidden"}>
+                  <Form.Control as="select" id="year" name="year" onChange={this.onChange} value={year}>
+                    <option value="" disabled>Please select a year...</option>
+                    <option value="1">First Year</option>
+                    <option value="2">Second Year</option>
+                    <option value="3">Third Year</option>
+                    <option value="4">Fourth Year</option>
+                    <option value="5">Fifth Year</option>
+                    <option value="6">Sixth Year</option>
+                    <option value="7">Seventh Year</option>
+                    <option value="8">Eighth Year+</option>
+                  </Form.Control>                
+                </Form.Group>
+
+                <Form.Group className={isAlumni ? "" : "hidden"}>
+                  <Form.Control as="select" id="grad_year" name="grad_year" onChange={this.onChange} value={grad_year}>
+                    <option value="" disabled>Please select a graduation year...</option>
+                    {options}
+                  </Form.Control>                
+                </Form.Group>
+
+                <Form.Group className={isIndustry ? "" : "hidden"}>
+                  <Form.Control name="company" value={company} onChange={this.onChange} type="text" placeholder="Current Employer"/>     
+                </Form.Group>
+
+                {error && <Card.Text style={{ color: 'red', fontSize:'small'}}>{error.message}</Card.Text>}
+                <Button disabled={isInvalid} type="submit" variant='primary' block>Sign Up</Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </div>
+      </div>
+	  );
   }
 }
 
-const SignUpForm = compose(
+const SignUpPage = compose(
   withRouter,
   withFirebase,
-)(SignUpFormBase);
+)(SignUpPageBase);
 
 export default SignUpPage;
-
-export { SignUpForm };

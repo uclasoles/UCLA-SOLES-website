@@ -12,7 +12,7 @@ import Card from 'react-bootstrap/Card';
 
 // TODO
 // * Add validation to form fields on submission
-// * Look into how to provide user feedback from Firebase calls
+// * Look into better way to provide user feedback from Firebase calls
 
 const INITIAL_STATE = {
   email: '',
@@ -60,8 +60,8 @@ class PasswordForgetPageBase extends Component {
                 <Form.Group controlId="formResetPassword">
                   <Form.Control name="email" value={email} onChange={this.onChange} type="email" placeholder="Email"/>
                 </Form.Group>
+                {error && <Card.Text style={{ color: 'red', fontSize:'small'}}>{error.message}</Card.Text>}
                 <Button disabled={isInvalid} type="submit" variant='primary' block>Reset</Button>
-                {error && <p>{error.message}</p>}
               </Form> 
             </Card.Body>
           </Card>

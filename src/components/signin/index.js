@@ -14,7 +14,7 @@ import Card from 'react-bootstrap/Card';
 
 // TODO
 // * Add validation to form fields on submission
-// * Look into how to provide user feedback from Firebase calls
+// * Look into better way to provide user feedback from Firebase calls
 
 // initial state of the form
 const INITIAL_STATE = {
@@ -69,9 +69,8 @@ class SignInPageBase extends Component {
 				      	<Form.Group controlId="formSignInPassword">
 							    <Form.Control name="password" value={password} onChange={this.onChange} type="password" placeholder="Password"/>
 							  </Form.Group>
+							  {error && <Card.Text style={{ color: 'red', fontSize:'small'}}>{error.message}</Card.Text>}
 				        <Button disabled={isInvalid} type="submit" variant='primary' block>Sign In</Button>
-
-				        {error && <p>{error.message}</p>}
 			      	</Form>
 							<p><Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link></p>
 							<p style={{color:"black"}}>Don&#8217;t have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link></p>
