@@ -1,6 +1,9 @@
 import React from 'react';
 import './agency.css';
 
+// fontawesome is needed for icons
+import 'font-awesome/css/font-awesome.min.css';
+
 const AboutPage = () => (
 <div className="about">
   
@@ -18,6 +21,7 @@ const AboutPage = () => (
       <div className="row">
         <div className="col-lg-12 text-center">
           <a id = "what we do">
+            {/* These br's are here for aesthetics */}
             <h2 className="section-heading text-uppercase"><br></br><br></br><br></br><br></br>What We Do</h2>
           </a>
         </div>
@@ -79,11 +83,11 @@ const AboutPage = () => (
         <div className="row">
           <div className="col-lg-12 text-center">
             <h2 id = "sponsors" className="section-heading text-uppercase">Sponsors</h2>
-            <h3 className="section-subheading text-muted">We’d like to extend a special thanks to our corporate sponsors. If you would like to become a sponsor, send an email to our External Vice President at uclasoles.evp@gmail.com!</h3>
+            <h3 className="section-subheading text-muted">We’d like to extend a special thanks to each of our corporate sponsors. If you represent a company and would like to become a SOLES sponsor, please reach out to our External Vice President at <a href="mailto:uclasoles.evp@gmail.com?Subject=Sponsorship%20Interest" target="_top">uclasoles.evp@gmail.com</a>!</h3>
           </div>
         </div>
         <div className="intro-text" style={{textAlign: 'center', marginBottom: '50px'}}>
-            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#whatwedo">Become a Sponsor</a>
+            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="mailto:uclasoles.evp@gmail.com?Subject=Sponsorship%20Interest">Become a Sponsor</a>
         </div>
         <div className="row">
           <div className="col-md-4 col-sm-6 portfolio-item">

@@ -25,7 +25,7 @@ const Navigation = () => (
 class NavigationAuth extends React.Component {
   constructor(props) {
     super(props);
-    //this.scrollToTop = this.scrollToTop.bind(this);
+    this.state = { opacity: 0 };
     this.mainNav = React.createRef();
   }
 
@@ -33,9 +33,11 @@ class NavigationAuth extends React.Component {
     window.onscroll =()=>{
       if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
         this.mainNav.current.style.padding = "0px 0px";
+        this.mainNav.current.style.margin = "0px";
         this.mainNav.current.style.backgroundColor = 'rgba(21,25,29,100)';
       } else {
         this.mainNav.current.style.padding = "20px 20px";
+        this.mainNav.current.style.margin = "10px";
         this.mainNav.current.style.backgroundColor = 'rgba(0,0,0,0)';
       }
     }
@@ -43,44 +45,42 @@ class NavigationAuth extends React.Component {
 
   render () {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" ref={this.mainNav}>
+      <nav className="navbar navbar-expand-lg navbar-dark fixed-top navbar-right" id="mainNav" ref={this.mainNav}>
         <div className="container">
           <a className="navbar-brand js-scroll-trigger" href="#page-top"><img src={solessun} alt = "Soles Sun" style={{height: '75px'}} /></a>
 
+
           <div className="dropdown">
-              <Link to={ROUTES.STUDENTS}><button className="dropbtn">STUDENTS</button></Link>
-              <div className="dropdown-content">
-                <a className="navbar-brand js-scroll-trigger" href="#">HOW TO JOIN</a>
-                <a className="navbar-brand js-scroll-trigger" href="#">CALENDAR</a>
-                <a className="navbar-brand js-scroll-trigger" href="#">CONTACT</a>
-              </div>
+            <Link to={ROUTES.ABOUT}><button className="dropbtn">ABOUT</button></Link>
+            <div className="dropdown-content">
+              <a href="#what-we-do">What We Do</a>
+              <a href="#sponsors">Sponsors</a>
+              <a href="#history">History</a>
+              <a href="#history">Contact</a>
             </div>
-
-            <div className="dropdown">
-              <Link to={ROUTES.COMPANIES}><button className="dropbtn">COMPANIES</button></Link>
-            </div>
-
-            <div className="dropdown">
-              <Link to={ROUTES.ABOUT}><button className="dropbtn">ABOUT</button></Link>
-              <div className="dropdown-content">
-                <ScrollLink to="#what we do" activeClass="active" spy={true} smooth={true} duration={500}>WHAT WE DO</ScrollLink>
-                <a className="navbar-brand js-scroll-trigger" href="#">SPONSORS</a>
-                <a className="navbar-brand js-scroll-trigger" href="#">HISTORY</a>
-              </div>
-            </div>
-
-            <div className="dropdown">
-              <button className="dropbtn">MEMBER SERVICES</button>
-              <div className="dropdown-content">
-                <a href="#"><Link to={ROUTES.PROFILE}>PROFILE</Link></a>
-                <a href="#"><Link to={ROUTES.TESTBANK}>TEST BANK</Link></a>
-                <SignOutButton />
-              </div>
-            </div>       
-                
-            <div className="collapse navbar-collapse" id="navbarResponsive"></div>
           </div>
-        </nav>
+          <div className="dropdown">
+            <Link to={ROUTES.STUDENTS}><button className="dropbtn">STUDENTS</button></Link>
+            <div className="dropdown-content">
+              <a href="#">How To Join</a>
+              <a href="#">Upcoming Events</a>
+            </div>
+          </div>
+          <div className="dropdown">
+            <Link to={ROUTES.COMPANIES}><button className="dropbtn">COMPANIES</button></Link>
+          </div>
+          <div className="dropdown">
+            <button className="dropbtn">MEMBER SERVICES</button>
+            <div className="dropdown-content">
+              <a href="#"><Link to={ROUTES.PROFILE}>Profile</Link></a>
+              <a href="#"><Link to={ROUTES.TESTBANK}>Test Bank</Link></a>
+              <SignOutButton />
+            </div>
+          </div>       
+              
+          <div className="collapse navbar-collapse" id="navbarResponsive"></div>
+        </div>
+      </nav>
     )
   } 
 }
@@ -89,7 +89,6 @@ class NavigationNonAuth extends React.Component {
   constructor(props) {
     super(props);
     this.state = { opacity: 0 };
-    //this.scrollToTop = this.scrollToTop.bind(this);
     this.mainNav = React.createRef();
   }
 
@@ -108,36 +107,29 @@ class NavigationNonAuth extends React.Component {
   }
   
   render () {
-    
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" ref={this.mainNav}>
+      <nav className="navbar navbar-expand-lg navbar-right navbar-dark fixed-top" id="mainNav" ref={this.mainNav}>
         <div className="container">
           <a className="navbar-brand js-scroll-trigger" href="#page-top"><img src={solessun} alt = "Soles Sun" style={{height: '75px'}} /></a>
-
+          <div className="dropdown">
+            <Link to={ROUTES.ABOUT}><button className="dropbtn">ABOUT</button></Link>
+            <div className="dropdown-content">
+              <a href="#what-we-do">What We Do</a>
+              <a href="#sponsors">Sponsors</a>
+              <a href="#history">History</a>
+              <a href="#history">Contact</a>
+            </div>
+          </div>
           <div className="dropdown">
               <Link to={ROUTES.STUDENTS}><button className="dropbtn">STUDENTS</button></Link>
               <div className="dropdown-content">
-                <a href="#">HOW TO JOIN</a>
-                <a href="#">CALENDAR</a>
-                <a href="#">CONTACT</a>
+                <a href="#">How To Join</a>
+                <a href="#">Upcoming Events</a>
               </div>
             </div>
-
             <div className="dropdown">
               <Link to={ROUTES.COMPANIES}><button className="dropbtn">COMPANIES</button></Link>
             </div>
-
-            <div className="dropdown">
-              <Link to={ROUTES.ABOUT}><button className="dropbtn">ABOUT</button></Link>
-              <div className="dropdown-content">
-                <ScrollLink to="#what-we-do" activeClass="active" spy={true} smooth={true} duration={500}>
-                  <button className="btn">WHAT WE DO</button>
-                </ScrollLink>
-                <a href="#sponsors">SPONSORS</a>
-                <a href="#history">HISTORY</a>
-              </div>
-            </div>
-
             <div className="dropdown">
               <Link to={ROUTES.SIGN_IN}><button className="dropbtn">LOGIN</button></Link>
             </div>        

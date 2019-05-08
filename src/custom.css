@@ -1,0 +1,16 @@
+#centered-masthead {
+  background-image: url('imgs/ucla-header.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  text-align: center;
+  color: white;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}

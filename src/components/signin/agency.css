@@ -178,24 +178,21 @@ img::-moz-selection {
   }
 }
 
-header.masthead {
+#centered-masthead {
+  background-image: url('./imgs/ucla-header.jpg');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
   text-align: center;
   color: white;
-  background-image: url('./imgs/ucla-header.jpg');
   background-repeat: no-repeat;
   background-attachment: scroll;
-  background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-  position: relative;
-  top: 0;
-}
-
-header.masthead .intro-text {
-  padding-top: 150px;
-  padding-bottom: 100px;
 }
 
 header.masthead .intro-text .intro-lead-in {
