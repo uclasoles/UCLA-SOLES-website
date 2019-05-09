@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 
 import { withFirebase } from '../firebase';
@@ -12,7 +12,13 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+
+// fontawesome stuff
+import '../../fontawesome.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// allows react router and bootstrap to play nicely
+import { LinkContainer } from 'react-router-bootstrap';
 
 // TODO
 // * Add validation to form fields on submission
@@ -142,10 +148,12 @@ class SignUpPageBase extends Component {
       <div id="centered-masthead">
         <div className="row h-100 justify-content-center align-items-center">
           <Card style={{ width:'25rem' }}>
-            <Card.Header as="h3" style={{ color: 'black' }}>Sign Up</Card.Header>
+            <Card.Header as="h3" style={{ color: 'black', textAlign: 'left' }}>
+              <LinkContainer to={ROUTES.SIGN_IN}><FontAwesomeIcon icon={['fas', 'chevron-left']} size='xs' className="card-heading-icon"/></LinkContainer>
+              Sign Up
+            </Card.Header>
             <Card.Body>
               <Form onSubmit={this.onSubmit}>
-
                 <Form.Group controlId="formSignUpEmail">
                   <Form.Control name="email" value={email} onChange={this.onChange} type="email" placeholder="Email Address"/>
                 </Form.Group>

@@ -11,13 +11,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+// fontawesome stuff
+import '../../fontawesome.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 // allows react router and bootstrap to play nicely
 import { LinkContainer } from 'react-router-bootstrap';
-
-import solessun from '../../imgs/soles-sun.png';
-
-// TODO
-// * Look into hosting the soles sun somewhere else
 
 const Navigation = () => (
   <div>
@@ -46,7 +45,7 @@ class NavigationAuthBase extends Component {
   render () {
     return (
       <Navbar expand="lg" fixed="top" style={{backgroundColor: `rgba(52, 58, 64, ${this.state.opacity})`}}>
-        <LinkContainer to={ROUTES.ABOUT}><Navbar.Brand><img src={solessun} alt = "Soles Sun" style={{height: '75px'}}/></Navbar.Brand></LinkContainer>
+        <LinkContainer to={ROUTES.ABOUT}><Navbar.Brand><img src='https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,h_75,q_100,w_80/soles-sun.png' alt = "Soles Sun"/></Navbar.Brand></LinkContainer>
         <Nav className="mr-auto"></Nav>
         <Nav>
           <LinkContainer className="navbar-item" to={ROUTES.ABOUT}><Nav.Link>ABOUT</Nav.Link></LinkContainer>
@@ -54,10 +53,10 @@ class NavigationAuthBase extends Component {
           <LinkContainer className="navbar-item" to={ROUTES.COMPANIES}><Nav.Link>COMPANIES</Nav.Link></LinkContainer>
 
           <NavDropdown title={<div className="navbar-item" style={{display: "inline-block"}}>MEMBER SERVICES</div>}>
-            <LinkContainer to={ROUTES.PROFILE}><NavDropdown.Item>Profile</NavDropdown.Item></LinkContainer>
-            <LinkContainer to={ROUTES.TESTBANK}><NavDropdown.Item>Test Bank</NavDropdown.Item></LinkContainer>
+            <LinkContainer to={ROUTES.PROFILE}><NavDropdown.Item><FontAwesomeIcon icon={['fas', 'user-circle']} className="dropdown-icon"/>Profile</NavDropdown.Item></LinkContainer>
+            <LinkContainer to={ROUTES.TESTBANK}><NavDropdown.Item><FontAwesomeIcon icon={['fas', 'copy']} className="dropdown-icon"/>Test Bank</NavDropdown.Item></LinkContainer>
             <NavDropdown.Divider />
-            <NavDropdown.Item onClick={this.props.firebase.doSignOut}>Sign Out</NavDropdown.Item>
+            <NavDropdown.Item onClick={this.props.firebase.doSignOut}><FontAwesomeIcon icon={['fas', 'sign-out-alt']} className="dropdown-icon"/>Sign Out</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar>
@@ -82,7 +81,7 @@ class NavigationNonAuthBase extends Component {
   render () {
     return (
       <Navbar expand="lg" fixed="top" style={{backgroundColor: `rgba(52, 58, 64, ${this.state.opacity})`}}>
-        <LinkContainer to={ROUTES.ABOUT}><Navbar.Brand><img src={solessun} alt = "Soles Sun" style={{height: '75px'}}/></Navbar.Brand></LinkContainer>
+        <LinkContainer to={ROUTES.ABOUT}><Navbar.Brand><img src='https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,h_75,q_100,w_80/soles-sun.png' alt = "Soles Sun"/></Navbar.Brand></LinkContainer>
         <Nav className="mr-auto"></Nav>
         <Nav>
           <LinkContainer className="navbar-item" to={ROUTES.ABOUT}><Nav.Link>ABOUT</Nav.Link></LinkContainer>

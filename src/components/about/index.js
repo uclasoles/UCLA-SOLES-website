@@ -1,27 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './agency.css';
 
-// fontawesome is needed for icons
-import 'font-awesome/css/font-awesome.min.css';
+// bootstrap and css components
+import '../../custom.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
-const AboutPage = () => (
-<div className="about">
-  
-  <header id = "page-top" className="masthead">
-      <div className="container">
-        <div className="intro-text">
-          <div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
-          <div className="intro-heading text-uppercase">SOLES at UCLA</div>
-          <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#what we do">Learn More</a>
-        </div>
-      </div>
-  </header>
+// fontawesome stuff
+import '../../fontawesome.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+/*
+const AboutPageOld = () => (
   <div id = "what-we-do" className="container">
       <div className="row">
         <div className="col-lg-12 text-center">
           <a id = "what we do">
-            {/* These br's are here for aesthetics */}
             <h2 className="section-heading text-uppercase"><br></br><br></br><br></br><br></br>What We Do</h2>
           </a>
         </div>
@@ -311,8 +307,33 @@ const AboutPage = () => (
         </div>
       </div>
     </section>
-
-  </div>
 );
+*/
+
+class AboutPage extends Component {
+  render () {
+    return (
+      <div>
+        {/* header area */}
+        <Container fluid>
+          <Row id="centered-masthead" className="justify-content-center align-items-center">
+            <div className="intro-text">
+              <div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
+              <div className="intro-heading">SOLES at UCLA</div>
+              <Button variant="primary" href="#what we do">Learn More<FontAwesomeIcon icon={['fas', 'angle-down']} className="dropdown-icon-right" inverted="true"/></Button>
+            </div>
+          </Row>
+        </Container>
+
+        {/* what we do area */}
+        <Container id="what-we-do">
+          <Row>
+          this is a cool thing that i want to show you doing the thing
+          </Row>
+        </Container>
+      </div>
+    );
+  }
+}
 
 export default AboutPage;

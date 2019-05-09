@@ -1,5 +1,5 @@
 #centered-masthead {
-  background-image: url('imgs/ucla-header.jpg');
+  background-image: url('https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,w_2000/v1557430586/ucla-header.png');
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -37,4 +37,55 @@ a.dropdown-toggle {
 
 a.dropdown-toggle:hover {
   color: rgb(254, 209, 54) !important;
+}
+
+/* for font awesome icons in member services */
+.dropdown-icon {
+  margin-right: 7px;
+}
+
+.dropdown-icon-right {
+  margin-left: 7px;
+}
+
+.card-heading-icon {
+  margin-right: 7rem;
+}
+
+.card-heading-icon-reset {
+  margin-right: 3.5rem;
+}
+
+/* for about page titles */
+.intro-lead-in {
+  font-size: 22px;
+  font-style: italic;
+  line-height: 22px;
+  margin-bottom: 25px;
+  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.intro-heading {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .intro-lead-in {
+    font-size: 40px;
+    font-style: italic;
+    line-height: 40px;
+    margin-bottom: 25px;
+    font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  .intro-heading {
+    font-size: 75px;
+    font-weight: 700;
+    line-height: 75px;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import { withFirebase } from '../firebase';
 import * as ROUTES from '../../constants/routes';
@@ -9,6 +8,13 @@ import '../../custom.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+
+// fontawesome stuff
+import '../../fontawesome.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// allows react router and bootstrap to play nicely
+import { LinkContainer } from 'react-router-bootstrap';
 
 // TODO
 // * Add validation to form fields on submission
@@ -53,8 +59,11 @@ class PasswordForgetPageBase extends Component {
     return (
       <div id="centered-masthead">
         <div className="row h-100 justify-content-center align-items-center">
-          <Card style={{ width:'20rem' }}>
-            <Card.Header as="h3" style={{ color: 'black' }}>Password Reset</Card.Header>
+          <Card style={{ width:'25rem' }}>
+            <Card.Header as="h3" style={{ color: 'black', textAlign: 'left'}}>
+              <LinkContainer to={ROUTES.SIGN_IN}><FontAwesomeIcon icon={['fas', 'chevron-left']} size='xs' className="card-heading-icon-reset"/></LinkContainer>
+              Password Reset
+            </Card.Header>
             <Card.Body>
               <Form onSubmit={this.onSubmit}>
                 <Form.Group controlId="formResetPassword">

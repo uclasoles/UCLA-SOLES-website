@@ -5,7 +5,6 @@ import './index.css';
 import App from './components/app';
 import Firebase, { FirebaseContext } from './components/firebase';
 import * as serviceWorker from './serviceWorker';
-import Popper from 'popper.js';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
