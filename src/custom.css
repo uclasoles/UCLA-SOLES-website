@@ -14,3 +14,27 @@
   -moz-background-size: cover;
   -o-background-size: cover;
 }
+
+/* for navbar items */
+.navbar-item {
+  color: white !important;
+  font-size: large;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.navbar-item:hover {
+  color: rgb(254, 209, 54) !important;
+  font-size: large;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* for dropbown in navbar */
+a.dropdown-toggle {
+  color: white !important;
+}
+
+a.dropdown-toggle:hover {
+  color: rgb(254, 209, 54) !important;
+}
