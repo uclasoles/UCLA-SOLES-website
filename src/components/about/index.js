@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './agency.css';
+import ReactDOM from 'react-dom';
 
 // bootstrap and css components
 import '../../custom.css';
@@ -15,31 +15,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 /*
 const AboutPageOld = () => (
   <div id = "what-we-do" className="container">
-      <div className="row">
-        <div className="col-lg-12 text-center">
-          <a id = "what we do">
-            <h2 className="section-heading text-uppercase"><br></br><br></br><br></br><br></br>What We Do</h2>
-          </a>
-        </div>
-      </div>
-        <div className="row text-center">
-          <div className="col-md-6">
-            <span className="fa-stack fa-4x">
-              <i className="fa fa-circle fa-stack-2x text-primary"></i>
-              <i className="fa fa-book fa-stack-1x fa-inverse"></i>
-              </span>
-              <h4 className="service-heading">Academic Development</h4>
-              <p className="text-muted">We seek to provide our students with the resources that they need to excel academically. Our annual Professor Networking Barbeque aims to connect qualified SOLES students with research positions in world-className UCLA laboratories. In order to help students get ahead in the classNameroom, we provide our <a href="http://uclatri.org" target="_blank" rel="noopener noreferrer">Bank of Knowledge</a>. Finally, we host weekly Study Nights on the Hill with free snacks!</p>
-          </div>
-          <div className="col-md-6">
-            <span className="fa-stack fa-4x">
-              <i className="fa fa-circle fa-stack-2x text-primary"></i>
-              <i className="fa fa-users fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 className="service-heading">Chapter Development</h4>
-            <p className="text-muted">Join the SOLES familia! Bridge the gap between new and continuing students by participating in MentorSHPE, physically challenge yourself by joining our IM Sports Teams, and create lasting memories at one of our football tailgates. Furthermore, our chapter aims to host at least one internal and one external social event per quarter.</p>
-          </div>
-        </div>
         <div className="row text-center">
           <div className="col-md-6">
             <span className="fa-stack fa-4x">
@@ -311,6 +286,7 @@ const AboutPageOld = () => (
 */
 
 class AboutPage extends Component {
+
   render () {
     return (
       <div>
@@ -320,16 +296,71 @@ class AboutPage extends Component {
             <div className="intro-text">
               <div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
               <div className="intro-heading">SOLES at UCLA</div>
-              <Button variant="primary" href="#what we do">Learn More<FontAwesomeIcon icon={['fas', 'angle-down']} className="dropdown-icon-right" inverted="true"/></Button>
+              <Button variant="primary" href="#what-we-do">Learn More<FontAwesomeIcon icon={['fas', 'angle-down']} className="dropdown-icon-right" inverted="true"/></Button>
             </div>
           </Row>
         </Container>
 
         {/* what we do area */}
-        <Container id="what-we-do">
+        <Container>
+
           <Row>
-          this is a cool thing that i want to show you doing the thing
+            <Col id="what-we-do">
+                <h2 className="text-uppercase text-center"><br></br><br></br><br></br><br></br>What We Do</h2>
+            </Col>
           </Row>
+
+          <Row className="text-center">
+            <Col md={{ span: 6 }}>
+              <span className="fa-layers fa-fw fa-4x what-we-do-icons">
+                <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
+                <FontAwesomeIcon icon={['fas', 'graduation-cap']} color="white"/>
+              </span>
+              <h4 className="service-heading">Academic Development</h4>
+              <p className="text-muted">We seek to provide our membership with resources that will help them to excel academically. Our annual Professor Networking Barbeque connects qualified SOLES students with research positions in UCLA's world-class laboratories. To help our members in the classroom, we provide a regularly updated Test Bank to Local Members. Finally, we host weekly Study Nights on the Hill with free snacks!</p>
+            </Col>
+            <Col md={{ span: 6 }}>
+              <span className="fa-layers fa-fw fa-4x what-we-do-icons">
+                <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
+                <FontAwesomeIcon icon={['fas', 'users']} color="white"/>
+              </span>
+              <h4 className="service-heading">Chapter Development</h4>
+              <p className="text-muted">Join the SOLES familia! Bridge the gap between new and continuing students by participating in MentorSHPE, physically challenge yourself by joining our IM Sports Teams, and create lasting memories at one of our football tailgates. Furthermore, our chapter aims to host at least one internal and one external social event per quarter.</p>
+            </Col>
+          </Row>
+
+          <Row className="text-center">
+            <Col md={{ span: 6 }}>
+              <span className="fa-layers fa-fw fa-4x what-we-do-icons">
+                <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
+                <FontAwesomeIcon icon={['fas', 'chart-line']} color="white"/>
+              </span>
+              <h4 className="service-heading">Leadership Development</h4>
+              <p className="text-muted">Looking for leadership opportunities? Join the SOLES Executive Board to empower the Hispanic community, attend the SHPE Regional Leadership Development Conference (RLDC) to learn leadership skills and network with other SHPE Chapters, and develop yourself as a future leader at the SHPE National Institute for Leadership Advancement.</p>
+            </Col>
+            <Col md={{ span: 6 }}>
+              <span className="fa-layers fa-fw fa-4x what-we-do-icons">
+                <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
+                <FontAwesomeIcon icon={['fas', 'suitcase']} color="white"/>
+              </span>
+              <h4 className="service-heading">Professional Development</h4>
+              <p className="text-muted">Still looking for a summer internship? Want to polish your elevator pitch and interviewing skills? Learn valuable professional lessons from professionals during industry-hosted meetings, find out how to apply to and acquire internships at various events throughout the year, and get professional exposure at the SHPE National Conference.</p>
+            </Col>
+          </Row>
+
+          <Row className="text-center">
+            <Col md={{ span: 6, offset: 3 }}>
+              <span className="fa-layers fa-fw fa-4x what-we-do-icons">
+                <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
+                <FontAwesomeIcon icon={['fas', 'globe-americas']} color="white"/>
+              </span>
+              <h4 className="service-heading">Community Outreach</h4>
+              <p className="text-muted">Be a part of our outreach program by helping with Engineers in Training Day, bring STEM to the community at our Noche de Ciencias, or explore the Natural Science Center with youth during Day of Science! SOLES provides weekly tutoring for local K-12 students in the classNameroom, lab tours for high school students visiting UCLA, and hosts prospective Bruins during our annual Freshman Weekend. All of our outreach efforts aim to empower Hispanics to participate in STEM.</p>
+            </Col>
+          </Row>
+
+          {/* sponsors section */}
+
         </Container>
       </div>
     );

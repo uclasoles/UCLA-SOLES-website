@@ -89,3 +89,9 @@ a.dropdown-toggle:hover {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 }
+
+/* for icons in what-we-do section of about page */
+.what-we-do-icons {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
