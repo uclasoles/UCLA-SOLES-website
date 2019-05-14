@@ -30,6 +30,22 @@
   margin-right: 5px;
 }
 
+/* for primary button */
+.btn-primary {
+  background-color: #fed136;
+  border-color: #fed136;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+  background-color: #fec810 !important;
+  border-color: #fec810 !important;
+  color: white;
+}
+
+.btn-primary:active, .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+}
+
 /* for dropbown in navbar */
 a.dropdown-toggle {
   color: white !important;
@@ -95,3 +111,107 @@ a.dropdown-toggle:hover {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+/* for the headings on about page */
+
+h2.section-heading {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+h3.section-subheading {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 50px;
+  text-transform: none;
+  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* for styling of sponsors section on about page */
+#sponsors .portfolio-item {
+  right: 0;
+  margin: 0 0 15px;
+}
+
+#sponsors .portfolio-item .portfolio-link {
+  position: relative;
+  display: block;
+  max-width: 400px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+#sponsors .portfolio-item .portfolio-link .portfolio-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  opacity: 0;
+  background: rgba(254, 209, 54, 0.9);
+}
+
+#sponsors .portfolio-item .portfolio-link .portfolio-hover:hover {
+  opacity: 1;
+}
+
+#sponsors .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 20px;
+  margin-top: -12px;
+  text-align: center;
+  color: white;
+}
+
+#sponsors .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+  margin-top: -12px;
+}
+
+#sponsors .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#sponsors .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+  margin: 0;
+}
+
+#sponsors .portfolio-item .portfolio-caption {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;
+  background-color: #fff;
+}
+
+#sponsors .portfolio-item .portfolio-caption h4 {
+  margin: 0;
+  text-transform: none;
+}
+
+#sponsors .portfolio-item .portfolio-caption p {
+  font-size: 16px;
+  font-style: italic;
+  margin: 0;
+  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#sponsors * {
+  z-index: 2;
+}
+
+@media (min-width: 767px) {
+  #sponsors .portfolio-item {
+    margin: 0 0 30px;
+  }
+}
+
+/* footer styling */
+#footer {
+  background-color: rgba(52, 58, 64);
+  color: white;
+}
+
+

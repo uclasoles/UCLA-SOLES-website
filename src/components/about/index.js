@@ -12,138 +12,16 @@ import Button from 'react-bootstrap/Button';
 import '../../fontawesome.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// link stuff
+import * as ROUTES from '../../constants/routes';
+import { Link } from 'react-router-dom';
+
+// allows react router and bootstrap to play nicely
+import { LinkContainer } from 'react-router-bootstrap';
+
 /*
 const AboutPageOld = () => (
-  <div id = "what-we-do" className="container">
-        <div className="row text-center">
-          <div className="col-md-6">
-            <span className="fa-stack fa-4x">
-              <i className="fa fa-circle fa-stack-2x text-primary"></i>
-              <i className="fa fa-line-chart fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 className="service-heading">Leadership Development</h4>
-            <p className="text-muted">Looking for leadership opportunities? Join the SOLES Executive Board to lead our organization as we empower the Hispanic community, attend the SHPE Regional Leadership Development Conference (RLDC) to learn leadership skills and network with other SHPE Chapters, and develop yourself as a future leader at the SHPE National Institute for Leadership Advancement.</p>
-          </div>
-          <div className="col-md-6">
-            <span className="fa-stack fa-4x">
-              <i className="fa fa-circle fa-stack-2x text-primary"></i>
-              <i className="fa fa-suitcase fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 className="service-heading">Professional Development</h4>
-            <p className="text-muted">Still looking for that summer internship? Want to polish your elevator pitch and interviewing skills? Learn valuable professional lessons from professionals during Industry-hosted meetings, find out how to apply to and acquire internships at various events throughout the year, and get professional exposure at the SHPE National Conference.</p>
-          </div>
-        </div>
-        <div className="row text-center">
-          <div className="col-md-3">
-          </div>
-            <div className="col-md-6">
-            <span className="fa-stack fa-4x">
-              <i className="fa fa-circle fa-stack-2x text-primary"></i>
-              <i className="fa fa-globe fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 className="service-heading">Community Outreach</h4>
-              <p className="text-muted">Be a part of our outreach program by helping with Engineers in Training Day, bring STEM to the community at our Noche de Ciencias, or explore the Natural Science Center with youth during Day of Science! SOLES provides weekly tutoring for local K-12 students in the classNameroom, lab tours for high school students visiting UCLA, and hosts prospective Bruins during our annual Freshman Weekend. All of our outreach efforts aim to empower Hispanics to participate in STEM.</p>
-          </div>
-          <div className="col-md-3">
-          </div>
-        </div>
-      </div>
-
-      <section className="bg-light" id="sponsors">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 text-center">
-            <h2 id = "sponsors" className="section-heading text-uppercase">Sponsors</h2>
-            <h3 className="section-subheading text-muted">We’d like to extend a special thanks to each of our corporate sponsors. If you represent a company and would like to become a SOLES sponsor, please reach out to our External Vice President at <a href="mailto:uclasoles.evp@gmail.com?Subject=Sponsorship%20Interest" target="_top">uclasoles.evp@gmail.com</a>!</h3>
-          </div>
-        </div>
-        <div className="intro-text" style={{textAlign: 'center', marginBottom: '50px'}}>
-            <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="mailto:uclasoles.evp@gmail.com?Subject=Sponsorship%20Interest">Become a Sponsor</a>
-        </div>
-        <div className="row">
-          <div className="col-md-4 col-sm-6 portfolio-item">
-            <a className="portfolio-link" href="http://www.aerospace.org/" target="_blank">
-              <div className="portfolio-hover">
-                <div className="portfolio-hover-content">
-                  <i className="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-                <img className="img-fluid" style={{filter: 'invert(1)', verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/aerospace-logo.png" alt="Aerospace Company logo" />
-              </div>
-            </a>
-            <div className="portfolio-caption">
-              <h4>Aerospace</h4>
-              <p className="text-muted">Gold Sponsor</p>
-            </div>
-          </div>
-          <div className="col-md-4 col-sm-6 portfolio-item">
-            <a className="portfolio-link" href="http://www.boeing.com/" target="_blank">
-              <div className="portfolio-hover">
-                <div className="portfolio-hover-content">
-                  <i className="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-              <img className="img-fluid center-block" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/boeing-logo.png" alt="Boeing Logo" />
-              </div>
-            </a>
-            <div className="portfolio-caption">
-              <h4>Boeing</h4>
-              <p className="text-muted">Gold Sponsor</p>
-            </div>
-          </div>
-          <div className="col-md-4 col-sm-6 portfolio-item">
-            <a className="portfolio-link" href="https://www.chevron.com/" target="_blank">
-              <div className="portfolio-hover">
-                <div className="portfolio-hover-content">
-                  <i className="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-              <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/chevron-logo.png" alt="Chevron Logo" />
-              </div>
-            </a>
-            <div className="portfolio-caption">
-              <h4>Chevron</h4>
-              <p className="text-muted">Gold Sponsor</p>
-            </div>
-          </div>
-          <div className="col-md-4 col-sm-6 portfolio-item">
-            <a className="portfolio-link" href="https://www.google.com/" target="_blank">
-              <div className="portfolio-hover">
-                <div className="portfolio-hover-content">
-                  <i className="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-              <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/google-logo.png" alt="Google logo" />
-              </div>
-            </a>
-            <div className="portfolio-caption">
-              <h4>Google</h4>
-              <p className="text-muted">Gold Sponsor</p>
-            </div>
-          </div>
-          <div className="col-md-4 col-sm-6 portfolio-item">
-            <a className="portfolio-link" href="http://www.phillips66.com/" target="_blank">
-              <div className="portfolio-hover">
-                <div className="portfolio-hover-content">
-                  <i className="fa fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
-                <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="imgs/phillips66-logo.png" alt="Phillips 66 Logo" />
-              </div>
-            </a>
-            <div className="portfolio-caption">
-              <h4>Phillips 66</h4>
-              <p className="text-muted">Bronze Sponsor</p>
-            </div>
-          </div>
-          <div className="col-md-4 col-sm-6 portfolio-item">
-          </div>
-        </div>
+        NOTE: THIS IS GETTING MOVED TO THE COMPANIES PAGE
         <div className="row" style={{marginTop: '50px'}}>
           <div className="col-md-3">
           </div>
@@ -287,6 +165,10 @@ const AboutPageOld = () => (
 
 class AboutPage extends Component {
 
+  scrollToBottom = () => {
+    this.whatWeDo.scrollIntoView({ behavior: "smooth" });
+  }
+
   render () {
     return (
       <div>
@@ -296,17 +178,16 @@ class AboutPage extends Component {
             <div className="intro-text">
               <div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
               <div className="intro-heading">SOLES at UCLA</div>
-              <Button variant="primary" href="#what-we-do">Learn More<FontAwesomeIcon icon={['fas', 'angle-down']} className="dropdown-icon-right" inverted="true"/></Button>
+              <Button variant="primary" onClick={this.scrollToBottom}>Learn More<FontAwesomeIcon icon={['fas', 'angle-down']} className="dropdown-icon-right" inverted="true"/></Button>
             </div>
           </Row>
         </Container>
 
         {/* what we do area */}
-        <Container>
-
+        <Container ref={(el) => { this.whatWeDo = el; }}>
           <Row>
-            <Col id="what-we-do">
-                <h2 className="text-uppercase text-center"><br></br><br></br><br></br><br></br>What We Do</h2>
+            <Col>
+                <h2 className="section-heading text-uppercase text-center"><br></br><br></br><br></br>What We Do</h2>
             </Col>
           </Row>
 
@@ -316,7 +197,7 @@ class AboutPage extends Component {
                 <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
                 <FontAwesomeIcon icon={['fas', 'graduation-cap']} color="white"/>
               </span>
-              <h4 className="service-heading">Academic Development</h4>
+              <h4>Academic Development</h4>
               <p className="text-muted">We seek to provide our membership with resources that will help them to excel academically. Our annual Professor Networking Barbeque connects qualified SOLES students with research positions in UCLA's world-class laboratories. To help our members in the classroom, we provide a regularly updated Test Bank to Local Members. Finally, we host weekly Study Nights on the Hill with free snacks!</p>
             </Col>
             <Col md={{ span: 6 }}>
@@ -324,7 +205,7 @@ class AboutPage extends Component {
                 <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
                 <FontAwesomeIcon icon={['fas', 'users']} color="white"/>
               </span>
-              <h4 className="service-heading">Chapter Development</h4>
+              <h4>Chapter Development</h4>
               <p className="text-muted">Join the SOLES familia! Bridge the gap between new and continuing students by participating in MentorSHPE, physically challenge yourself by joining our IM Sports Teams, and create lasting memories at one of our football tailgates. Furthermore, our chapter aims to host at least one internal and one external social event per quarter.</p>
             </Col>
           </Row>
@@ -335,7 +216,7 @@ class AboutPage extends Component {
                 <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
                 <FontAwesomeIcon icon={['fas', 'chart-line']} color="white"/>
               </span>
-              <h4 className="service-heading">Leadership Development</h4>
+              <h4>Leadership Development</h4>
               <p className="text-muted">Looking for leadership opportunities? Join the SOLES Executive Board to empower the Hispanic community, attend the SHPE Regional Leadership Development Conference (RLDC) to learn leadership skills and network with other SHPE Chapters, and develop yourself as a future leader at the SHPE National Institute for Leadership Advancement.</p>
             </Col>
             <Col md={{ span: 6 }}>
@@ -343,7 +224,7 @@ class AboutPage extends Component {
                 <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
                 <FontAwesomeIcon icon={['fas', 'suitcase']} color="white"/>
               </span>
-              <h4 className="service-heading">Professional Development</h4>
+              <h4>Professional Development</h4>
               <p className="text-muted">Still looking for a summer internship? Want to polish your elevator pitch and interviewing skills? Learn valuable professional lessons from professionals during industry-hosted meetings, find out how to apply to and acquire internships at various events throughout the year, and get professional exposure at the SHPE National Conference.</p>
             </Col>
           </Row>
@@ -354,14 +235,52 @@ class AboutPage extends Component {
                 <FontAwesomeIcon icon={['fas', 'circle']} transform="grow-18" className="text-primary"/>
                 <FontAwesomeIcon icon={['fas', 'globe-americas']} color="white"/>
               </span>
-              <h4 className="service-heading">Community Outreach</h4>
-              <p className="text-muted">Be a part of our outreach program by helping with Engineers in Training Day, bring STEM to the community at our Noche de Ciencias, or explore the Natural Science Center with youth during Day of Science! SOLES provides weekly tutoring for local K-12 students in the classNameroom, lab tours for high school students visiting UCLA, and hosts prospective Bruins during our annual Freshman Weekend. All of our outreach efforts aim to empower Hispanics to participate in STEM.</p>
+              <h4>Community Outreach</h4>
+              <p className="text-muted">Be a part of our outreach program by helping with Engineers in Training Day, bring STEM to the community at our Noche de Ciencias, or explore the Natural Science Center with youth during Day of Science! SOLES provides weekly tutoring for local K-12 students in the classNameroom, lab tours for high school students visiting UCLA, and hosts prospective Bruins during our annual Freshman Weekend. All of our outreach efforts aim to empower Hispanics to participate in STEM.<br></br><br></br><br></br><br></br><br></br></p>
             </Col>
           </Row>
-
-          {/* sponsors section */}
-
         </Container>
+
+        {/* sponsors section */}
+        <div className="bg-light">
+          <Container>
+            <Row>
+              <Col md={{ span: 10, offset: 1 }} className="text-center">
+                <h2 className="section-heading text-uppercase"><br></br><br></br><br></br>Sponsors</h2>
+                <h3 className="section-subheading text-muted">We’d like to extend a special thanks to each of our corporate sponsors. If you represent a company are interested in becoming a SOLES sponsor, please check out our <Link to={ROUTES.COMPANIES}>companies</Link> page!</h3>
+                <LinkContainer to={ROUTES.COMPANIES}><Button variant="primary">Become a Sponsor</Button></LinkContainer>
+              </Col>
+            </Row>
+          </Container>
+
+          {/* once adding more sponsors automatically is added this will be dynamic */}
+          <Container id="sponsors">
+            <Row>
+              <Col md={{span:4}} sm={{span:6}} className="portfolio-item">
+                <a className="portfolio-link" href="http://www.aerospace.org/" target="_blank" rel="noopener noreferrer">
+                  <div className="portfolio-hover">
+                    <div className="portfolio-hover-content">
+                      <FontAwesomeIcon icon={['fas', 'plus']} transform="grow-18"/>
+                    </div>
+                  </div>
+                  <div style={{height: '250px', lineHeight: '250px', overflow: 'auto', textAlign: 'center'}}>
+                    <img className="img-fluid" style={{verticalAlign: 'middle', maxWidth: '100%', maxHeight: '100%'}} src="https://res.cloudinary.com/dzrbsvx06/image/upload/v1557851710/aerospace_logo.png" alt="Aerospace Company logo" />
+                  </div>
+                </a>
+                <div className="portfolio-caption">
+                  <h4>Aerospace</h4>
+                  <p className="text-muted">Gold Sponsor</p>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+
+        {/* history section */}
+        <Container id="history">
+          history section in progress
+        </Container>
+
       </div>
     );
   }

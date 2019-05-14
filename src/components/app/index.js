@@ -11,6 +11,7 @@ import AdminPage from '../admin';
 import CompaniesPage from '../companies';
 import StudentsPage from '../students';
 import TestBankPage from '../testbank';
+import Footer from '../footer';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../session';
@@ -31,6 +32,7 @@ const App = () => (
         <Route exact path={ROUTES.TESTBANK} component={TestBankPage}/>
         <Redirect to={ROUTES.ABOUT}/>
       </Switch>
+      <Footer />
     </div>
   </Router>
 );

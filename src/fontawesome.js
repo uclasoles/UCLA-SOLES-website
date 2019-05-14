@@ -12,7 +12,8 @@ import { faUserCircle,
 		 faUsers,
 		 faChartLine,
 		 faSuitcase,
-		 faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
+		 faGlobeAmericas,
+		 faPlus } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
 	faUserCircle,
@@ -25,5 +26,6 @@ library.add(
 	faUsers,
 	faChartLine,
 	faSuitcase,
-	faGlobeAmericas
+	faGlobeAmericas,
+	faPlus
 );
