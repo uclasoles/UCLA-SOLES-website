@@ -1,16 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import * as Scroll from 'react-scroll';
-import { Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import solessun from './soles-sun.png';
-import './agency.css';
+import React, { Component } from 'react';
+import { compose } from 'recompose';
 
-import SignOutButton from '../signout'; 
-import { TestBankButton } from '../testbank';
 import * as ROUTES from '../../constants/routes';
 import { AuthUserContext } from '../session';
+import { withFirebase } from '../firebase';
 
-let ScrollLink = Scroll.Link;
+// bootstrap and css components
+import '../../custom.css';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+// fontawesome stuff
+import '../../fontawesome.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// allows react router and bootstrap to play nicely
+import { LinkContainer } from 'react-router-bootstrap';
 
 const Navigation = () => (
   <div>
@@ -22,141 +28,78 @@ const Navigation = () => (
   </div>
 );
 
-class NavigationAuth extends React.Component {
+class NavigationAuthBase extends Component {
   constructor(props) {
     super(props);
     this.state = { opacity: 0 };
-    this.mainNav = React.createRef();
   }
 
   componentDidMount () {      
     window.onscroll =()=>{
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        this.mainNav.current.style.padding = "0px 0px";
-        this.mainNav.current.style.margin = "0px";
-        this.mainNav.current.style.backgroundColor = 'rgba(21,25,29,100)';
-      } else {
-        this.mainNav.current.style.padding = "20px 20px";
-        this.mainNav.current.style.margin = "10px";
-        this.mainNav.current.style.backgroundColor = 'rgba(0,0,0,0)';
-      }
+      this.setState({opacity: Math.min(document.documentElement.scrollTop / 80.0, 1.0)}, function () {
+        this.forceUpdate();
+      });
     }
   }
 
   render () {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top navbar-right" id="mainNav" ref={this.mainNav}>
-        <div className="container">
-          <a className="navbar-brand js-scroll-trigger" href="#page-top"><img src={solessun} alt = "Soles Sun" style={{height: '75px'}} /></a>
+      <Navbar expand="lg" fixed="top" style={{backgroundColor: `rgba(52, 58, 64, ${this.state.opacity})`}}>
+        <LinkContainer to={ROUTES.ABOUT}><Navbar.Brand><img src='https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,h_75,q_100,w_80/soles-sun.png' alt = "Soles Sun"/></Navbar.Brand></LinkContainer>
+        <Nav className="mr-auto"></Nav>
+        <Nav>
+          <LinkContainer className="navbar-item" to={ROUTES.ABOUT}><Nav.Link>ABOUT</Nav.Link></LinkContainer>
+          <LinkContainer className="navbar-item" to={ROUTES.STUDENTS}><Nav.Link>STUDENTS</Nav.Link></LinkContainer>
+          <LinkContainer className="navbar-item" to={ROUTES.COMPANIES}><Nav.Link>COMPANIES</Nav.Link></LinkContainer>
 
-
-          <div className="dropdown">
-            <Link to={ROUTES.ABOUT}><button className="dropbtn">ABOUT</button></Link>
-            <div className="dropdown-content">
-              <a href="#what-we-do">What We Do</a>
-              <a href="#sponsors">Sponsors</a>
-              <a href="#history">History</a>
-              <a href="#history">Contact</a>
-            </div>
-          </div>
-          <div className="dropdown">
-            <Link to={ROUTES.STUDENTS}><button className="dropbtn">STUDENTS</button></Link>
-            <div className="dropdown-content">
-              <a href="#">How To Join</a>
-              <a href="#">Upcoming Events</a>
-            </div>
-          </div>
-          <div className="dropdown">
-            <Link to={ROUTES.COMPANIES}><button className="dropbtn">COMPANIES</button></Link>
-          </div>
-          <div className="dropdown">
-            <button className="dropbtn">MEMBER SERVICES</button>
-            <div className="dropdown-content">
-              <a href="#"><Link to={ROUTES.PROFILE}>Profile</Link></a>
-              <a href="#"><Link to={ROUTES.TESTBANK}>Test Bank</Link></a>
-              <SignOutButton />
-            </div>
-          </div>       
-              
-          <div className="collapse navbar-collapse" id="navbarResponsive"></div>
-        </div>
-      </nav>
+          <NavDropdown title={<div className="navbar-item" style={{display: "inline-block"}}>MEMBER SERVICES</div>}>
+            <LinkContainer to={ROUTES.PROFILE}><NavDropdown.Item><FontAwesomeIcon icon={['fas', 'user-circle']} className="dropdown-icon"/>Profile</NavDropdown.Item></LinkContainer>
+            <LinkContainer to={ROUTES.TESTBANK}><NavDropdown.Item><FontAwesomeIcon icon={['fas', 'copy']} className="dropdown-icon"/>Test Bank</NavDropdown.Item></LinkContainer>
+            <NavDropdown.Divider />
+            <NavDropdown.Item onClick={this.props.firebase.doSignOut}><FontAwesomeIcon icon={['fas', 'sign-out-alt']} className="dropdown-icon"/>Sign Out</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar>
     )
   } 
 }
 
-class NavigationNonAuth extends React.Component {
+class NavigationNonAuthBase extends Component {
   constructor(props) {
     super(props);
     this.state = { opacity: 0 };
-    this.mainNav = React.createRef();
   }
 
   componentDidMount () {      
     window.onscroll =()=>{
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        this.mainNav.current.style.padding = "0px 0px";
-        this.mainNav.current.style.margin = "0px";
-        this.mainNav.current.style.backgroundColor = 'rgba(21,25,29,100)';
-      } else {
-        this.mainNav.current.style.padding = "20px 20px";
-        this.mainNav.current.style.margin = "10px";
-        this.mainNav.current.style.backgroundColor = 'rgba(0,0,0,0)';
-      }
+      this.setState({opacity: Math.min(document.documentElement.scrollTop / 80.0, 1.0)}, function () {
+        this.forceUpdate();
+      });
     }
   }
   
   render () {
     return (
-      <nav className="navbar navbar-expand-lg navbar-right navbar-dark fixed-top" id="mainNav" ref={this.mainNav}>
-        <div className="container">
-          <a className="navbar-brand js-scroll-trigger" href="#page-top"><img src={solessun} alt = "Soles Sun" style={{height: '75px'}} /></a>
-          <div className="dropdown">
-            <Link to={ROUTES.ABOUT}><button className="dropbtn">ABOUT</button></Link>
-            <div className="dropdown-content">
-              <a href="#what-we-do">What We Do</a>
-              <a href="#sponsors">Sponsors</a>
-              <a href="#history">History</a>
-              <a href="#history">Contact</a>
-            </div>
-          </div>
-          <div className="dropdown">
-              <Link to={ROUTES.STUDENTS}><button className="dropbtn">STUDENTS</button></Link>
-              <div className="dropdown-content">
-                <a href="#">How To Join</a>
-                <a href="#">Upcoming Events</a>
-              </div>
-            </div>
-            <div className="dropdown">
-              <Link to={ROUTES.COMPANIES}><button className="dropbtn">COMPANIES</button></Link>
-            </div>
-            <div className="dropdown">
-              <Link to={ROUTES.SIGN_IN}><button className="dropbtn">LOGIN</button></Link>
-            </div>        
-                
-            <div className="collapse navbar-collapse" id="navbarResponsive"></div>
-          </div>
-        </nav>
+      <Navbar expand="lg" fixed="top" style={{backgroundColor: `rgba(52, 58, 64, ${this.state.opacity})`}}>
+        <LinkContainer to={ROUTES.ABOUT}><Navbar.Brand><img src='https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,h_75,q_100,w_80/soles-sun.png' alt = "Soles Sun"/></Navbar.Brand></LinkContainer>
+        <Nav className="mr-auto"></Nav>
+        <Nav>
+          <LinkContainer className="navbar-item" to={ROUTES.ABOUT}><Nav.Link>ABOUT</Nav.Link></LinkContainer>
+          <LinkContainer className="navbar-item" to={ROUTES.STUDENTS}><Nav.Link>STUDENTS</Nav.Link></LinkContainer>
+          <LinkContainer className="navbar-item" to={ROUTES.COMPANIES}><Nav.Link>COMPANIES</Nav.Link></LinkContainer>
+          <LinkContainer className="navbar-item" to={ROUTES.SIGN_IN}><Nav.Link>SIGN IN</Nav.Link></LinkContainer>
+        </Nav>
+      </Navbar>
     )
   } 
 }
-/*
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("dropbtn").style.padding = "36px 10px";
-    document.getElementById("dropbtn").style.fontSize = "18px";
-  } else {
-    document.getElementById("dropbtn").style.padding = "72px 10px";
-    document.getElementById("dropbtn").style.fontSize = "24px";
-  }
-}
 
-function navbarCollapse() {
-  if ($("#mainNav").offset().top > 100) {
-    $("#mainNav").addClass("navbar-shrink");
-  } else {
-    $("#mainNav").removeClass("navbar-shrink");
-  }
-}
-*/
-export default Navigation;
+const NavigationAuth = compose(
+  withFirebase,
+) (NavigationAuthBase);
+
+const NavigationNonAuth = compose(
+  withFirebase,
+) (NavigationNonAuthBase);
+
+export default withFirebase(Navigation);

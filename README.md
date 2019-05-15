@@ -4,29 +4,24 @@ This repository contains the source code of UCLA SOLES' website. This repository
 
 ## Development and Usage Information
 
-Any active SOLES member is allowed to contribute to this repository. However, pull requests will be reviewed and approved by the SOLES Technical Chair or other qualified individual. Additionally, collaboration with official SOLES web development groups is encouraged.
+Active SOLES members must consult with official SOLES web devlopment committee or Technical Chair before working on any official contributions to this repository. Pull requests will be reviewed and approved by the leader of the web development committee or another qualified individual.
 
 ### Account and Tech Stack Info
 
-Hosting, authentication, database management, and storage are all managed through Firebase. This site was created using HTML, CSS, Javascript, React, and JQuery.
+Hosting, authentication, database management, and storage are all managed through Firebase. This site was created using HTML, CSS, Javascript, React, and JQuery. Additionally, numerous npm packages are used for many features.
 
 ### Development Environment Set-Up
 
-General set-up instructions (not necessarily exhaustive) are as follows:
+The following are general development environment set-up instructions:
 
 1. `git clone git@github.com:uclasoles/UCLA-SOLES-website.git soles-site-dev`
 2. `cd soles-site-dev`
-2. `npm install react`
-3. Copy the `.env` file containing the site's Firebase credentials from the uclasoles.technicalchair@gmail.com Google Drive to the `soles-site-dev` directory. *Note: Some issues were discovered when copying this file from the Google Drive to a Windows machine. Namely, the Windows OS does not allow you to name files with a '.' at the beginning and automatically renames `.env` to `env`. Please see the following link for a fix to this issue: https://www.oreilly.com/library/view/javascript-by-example/9781788293969/d34ba441-abb3-4937-acf1-a2e7d54ffb23.xhtml*.
+2. `npm install`
+3. Copy the `.env` file containing the site's Firebase credentials from the uclasoles.technicalchair@gmail.com Google Drive to the `soles-site-dev` directory. *Please see the following link if you encounter an issue copying this file from Google Drive to a Windows machine due to the '.' at the beginning of the name (Windows will automatically rename `.env` to `env`): https://www.oreilly.com/library/view/javascript-by-example/9781788293969/d34ba441-abb3-4937-acf1-a2e7d54ffb23.xhtml*.
 
 You should now be able to locally host the SOLES website. Running 'npm start' should result in the site being displayed at http://localhost:3000. 
 
-If you are not an official collaborator for the SOLES site, you should be making changes in a branch that can then be pull requested from. Official collaborators should make separate branches when implementing major features.
-
 *Note: .env contains two sets of credentials, one for the Firebase development project and one for the Firebase production project. This is to isolate the development database entries from the production database entries.*
-
-### Hosting the Development Version of the Site with Firebase
-not sure why we would need to do this, so we'll figure it out if we ever need it
 
 ### Hosting the Production Version of the Site with Firebase
 
@@ -34,7 +29,7 @@ When you are ready to push a production build of the site, one can do so with th
 
 1. `git clone git@github.com:/uclasoles/UCLA-SOLES-website.git soles-site`
 2. `cd soles-site`
-3. `npm install react`
+3. `npm install`
 4. Copy the `.env` file containing the site's Firebase credentials from the uclasoles.technicalchair@gmail.com Google Drive to the `soles-site` directory. *Optional: Check to ensure that you can locally host the site by running 'npm start'. Additionally, see the notes in the first section about copying `.env` from the Google Drive to a Windows machine.*
 5. `npm run build`
 6. `firebase init`
@@ -53,20 +48,32 @@ When you are ready to push a production build of the site, one can do so with th
 
 ## Roadmap
 
-- [x] Update README information to include: accounts/tech stack info, references, credential location info, setup info
-- [ ] Finish Firebase authentication integration (signout, home/landing dichotomy) with navigation bar
-- [ ] Finish creating Navigation component for all pages
-- [ ] Host landing/homepage images on Firebase and not in webpage (Long Term: Move this to Cloudinary?)
-- [ ] Develop automation script that can setup development environment or host production build, etc.
-- [ ] Long Term: Move state management information to a library like Redux or MobX
+- Refactor about page to use react bootstrap
+- Revise companies field to include temporary information
+- Update/add history section to the about page
+- Cleanup additional images on the starting page
+- Research protection of routes/querying role info in secure manner
+- Migrate major querying to use HTTP Requests through Cloud Functions
+- Figure out anchor/page issues with router to go between pages
+- Create admin page that is authorization protected to administrators ([Role-Based User Permissions in Firebase - YouTube](https://www.youtube.com/watch?v=3qODuvp1Zp8))
+- Build administrator functions for admin page (seeing users, filtering, administrative functions)
+- Add features required to edit profile to the profile page
+- Write content for companies pages
+- Investigate methods of creating a virtual environment for npm that can be stored on GitHub
+- Update GitHub information with regard to account information, technology stack, and npm packages (should just have to run command npm install)
+- Add Instagram, Facebook, and Snapchat links to About page
+- Add By-Laws section to the Students page
 
 ## References
 
-The following tutorials and blog posts were used when creating this website and could be referred to for troubleshooting problems with the site:
-
+The following tutorial was used to create the first version of the site:
 - https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial/
 
-The following are links where solutions were found to problems faced in the past:
-
 - Copying .env from Google Drive to Windows Machine: https://www.oreilly.com/library/view/javascript-by-example/9781788293969/d34ba441-abb3-4937-acf1-a2e7d54ffb23.xhtml
+
+- Documentation for React Bootstrap: https://react-bootstrap.github.io/layout/grid/
+
+- Documentation for Font Awesome 5 (for icons): https://www.npmjs.com/package/@fortawesome/react-fontawesome
+
+- Font Awesome 5: https://fontawesome.com 
 

@@ -178,24 +178,7 @@ img::-moz-selection {
   }
 }
 
-#centered-masthead {
-  background-image: url('./imgs/ucla-header.jpg');
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
-  text-align: center;
-  color: white;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-}
-
-header.masthead .intro-text .intro-lead-in {
+.intro-lead-in {
   font-size: 22px;
   font-style: italic;
   line-height: 22px;
@@ -203,7 +186,7 @@ header.masthead .intro-text .intro-lead-in {
   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-header.masthead .intro-text .intro-heading {
+.intro-heading {
   font-size: 50px;
   font-weight: 700;
   line-height: 50px;
@@ -212,18 +195,14 @@ header.masthead .intro-text .intro-heading {
 }
 
 @media (min-width: 768px) {
-  header.masthead .intro-text {
-    padding-top: 300px;
-    padding-bottom: 200px;
-  }
-  header.masthead .intro-text .intro-lead-in {
+  .intro-lead-in {
     font-size: 40px;
     font-style: italic;
     line-height: 40px;
     margin-bottom: 25px;
     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
-  header.masthead .intro-text .intro-heading {
+  .intro-heading {
     font-size: 75px;
     font-weight: 700;
     line-height: 75px;

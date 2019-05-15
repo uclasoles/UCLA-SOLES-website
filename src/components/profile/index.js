@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 
 import { AuthUserContext , withAuthorization} from '../session';
 import PasswordChangeForm from '../passwordchange';
-import '../navigation/agency.css';
 import { compose } from 'recompose';
 import { withFirebase } from '../firebase';
+
+import '../../custom.css';
 
 const ProfilePage = () => (
   <AuthUserContext.Consumer>
