@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import * as ROUTES from '../../constants/routes';
+import { Link } from 'react-router-dom';
 
 // bootstrap and css components
 import '../../custom.css';
@@ -12,28 +13,38 @@ import Col from 'react-bootstrap/Col';
 import '../../fontawesome.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// allows react router and bootstrap to play nicely
-import { LinkContainer } from 'react-router-bootstrap';
-
 class Footer extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render () {
     return (
       <div id="footer">
         <Container>
           <Row>
-            <Col md={{ span: 2, offset: 3 }}>
-              <h4>About</h4>
-              <h4>Sponsors</h4>
-              <h4>Companies</h4>
+            <Col md={{ span: 1, offset: 2 }} className="footer-item">
+              <div className="row h-100 justify-content-center align-items-center">
+                <a href="https://www.facebook.com/uclasoles" target="_blank" rel="noopener noreferrer" style={{marginRight: '40px'}}>
+                  <FontAwesomeIcon icon={['fab', 'facebook-square']} transform="grow-25" color="white"/>
+                </a>
+                <a href="https://www.instagram.com/uclasoles/?hl=en" target="_blank" rel="noopener noreferrer">
+                  <FontAwesomeIcon icon={['fab', 'instagram']} transform="grow-25" color="white"/>
+                </a>
+              </div>
             </Col>
-            <Col md={{span: 5}}>
-              <p>
+            <Col md={{ span: 2}} className="footer-item" style={{textAlign: 'right'}}>
+              <Link to={ROUTES.ABOUT} className="footer-link">About</Link>
+              <br></br>
+              <Link to={ROUTES.STUDENTS} className="footer-link">Students</Link>
+              <br></br>
+              <Link to={ROUTES.COMPANIES} className="footer-link">Companies</Link>
+            </Col>
+            <Col md={{span: 5}} className="footer-item">
+              <p className="footer-paragraph">
                 SOLES at UCLA changes lives by empowering the Hispanic community to realize its fullest potential and to impact the world through STEM awareness, access, support, and development.
               </p>
+            </Col>
+          </Row>
+          <Row className="footer-copyright">
+            <Col>
+                <small>&copy; Copyright 2017-2018, SOLES at UCLA</small>
             </Col>
           </Row>
         </Container>

@@ -15,6 +15,9 @@ import { faUserCircle,
 		 faGlobeAmericas,
 		 faPlus } from '@fortawesome/free-solid-svg-icons';
 
+import { faFacebookSquare,
+		 faInstagram } from '@fortawesome/free-brands-svg-icons'
+
 library.add(
 	faUserCircle,
 	faCopy,
@@ -27,5 +30,7 @@ library.add(
 	faChartLine,
 	faSuitcase,
 	faGlobeAmericas,
-	faPlus
+	faPlus,
+	faFacebookSquare,
+	faInstagram
 );
