@@ -3,10 +3,10 @@ import React from "react";
 function Test(props) {
   return (
       <div classname="test">
-        <span>{props.professor}</span>
-        <span>{props.year}</span>
-        <span>{props.quarter}</span>
-        <span>{props.type}</span>
+          <td>{props.professor}</td>
+          <td>{props.year}</td>
+          <td>{props.quarter}</td>
+          <td>{props.type}</td>
       </div>
   );
 }
