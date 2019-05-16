@@ -12,13 +12,14 @@ import CompaniesPage from '../companies';
 import StudentsPage from '../students';
 import TestBankPage from '../testbank';
 import Footer from '../footer';
+import ScrollToTop from '../scroll'
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../session';
 
 const App = () => (
   <Router>
-    <div>
+    <ScrollToTop>
       <Navigation />
       <Switch>
         <Route exact path={ROUTES.ABOUT} component={AboutPage}/>
@@ -33,7 +34,7 @@ const App = () => (
         <Redirect to={ROUTES.ABOUT}/>
       </Switch>
       <Footer />
-    </div>
+    </ScrollToTop>
   </Router>
 );
 

@@ -214,4 +214,37 @@ h3.section-subheading {
   color: white;
 }
 
+#footer .footer-link {
+  color: white !important;
+  font-size: large;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+#footer .footer-link:hover {
+  color: rgb(254, 209, 54) !important;
+}
+
+#footer .footer-paragraph {
+  font-size: 15px;
+  font-style: italic;
+}
+
+#footer .footer-item {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+#footer .footer-copyright {
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+#footer .footer-social {
+  height: 40px;
+  width: 40px;
+}
+
+
 
