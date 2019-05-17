@@ -22,10 +22,10 @@ class Footer extends Component {
             <Col md={{ span: 1, offset: 2 }} className="footer-item">
               <div className="row h-100 justify-content-center align-items-center">
                 <a href="https://www.facebook.com/uclasoles" target="_blank" rel="noopener noreferrer" style={{marginRight: '40px'}}>
-                  <FontAwesomeIcon icon={['fab', 'facebook-square']} transform="grow-25" color="white"/>
+                  <FontAwesomeIcon icon={['fab', 'facebook-square']} transform="grow-25" className="footer-social"/>
                 </a>
                 <a href="https://www.instagram.com/uclasoles/?hl=en" target="_blank" rel="noopener noreferrer">
-                  <FontAwesomeIcon icon={['fab', 'instagram']} transform="grow-25" color="white"/>
+                  <FontAwesomeIcon icon={['fab', 'instagram']} transform="grow-25" className="footer-social"/>
                 </a>
               </div>
             </Col>

@@ -15,6 +15,10 @@
   -o-background-size: cover;
 }
 
+.masthead {
+  background-image: url('https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,w_2000/v1557430586/ucla-header.png');
+}
+
 /* for navbar items */
 .navbar-item {
   color: white !important;
@@ -242,8 +246,11 @@ h3.section-subheading {
 }
 
 #footer .footer-social {
-  height: 40px;
-  width: 40px;
+  color: white;
+}
+
+#footer .footer-social:hover {
+  color: rgb(254, 209, 54) !important;
 }
 
 

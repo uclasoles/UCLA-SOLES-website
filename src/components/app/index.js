@@ -12,7 +12,7 @@ import CompaniesPage from '../companies';
 import StudentsPage from '../students';
 import TestBankPage from '../testbank';
 import Footer from '../footer';
-import ScrollToTop from '../scroll'
+import ScrollToTop from '../scroll';
 
 import * as ROUTES from '../../constants/routes';
 import { withAuthentication } from '../session';

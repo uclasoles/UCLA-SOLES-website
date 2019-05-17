@@ -520,10 +520,70 @@
 	"buffers":
 	[
 		{
-			"file": "src/constants/roles.js",
+			"file": "src/constants/routes.js",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 325,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/signin/index.js",
+			"settings":
+			{
+				"buffer_size": 2695,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/custom.css",
+			"settings":
+			{
+				"buffer_size": 5136,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/profile/index.js",
+			"settings":
+			{
+				"buffer_size": 1220,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/test/index.js",
+			"settings":
+			{
+				"buffer_size": 268,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/app/index.js",
+			"settings":
+			{
+				"buffer_size": 1540,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/signup/index.js",
+			"settings":
+			{
+				"buffer_size": 8903,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/components/about/index.js",
+			"settings":
+			{
+				"buffer_size": 15274,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -539,6 +599,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"rein",
 				"Indentation: Reindent Lines"
@@ -574,14 +638,15 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/kromero/Desktop/soles-site-work/soles-site-dev",
-		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/functions"
 	],
 	"file_history":
 	[
-		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/index.js",
-		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/fontawesome.js",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/custom.css",
+		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/constants/routes.js",
+		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/fontawesome.js",
+		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/about/index.js",
+		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/signup/index.js",
+		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/index.js",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/soles-site.sublime-project",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/README.md",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/app/index.js",
@@ -596,11 +661,8 @@
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/passwordforget/index.js",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/public/index.html",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/footer/index.js",
-		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/about/index.js",
-		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/signup/index.js",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/signin/index.js",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/scroll/index.js",
-		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/constants/routes.js",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/navigation/index.js",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/firebase/index.js",
 		"/Users/kromero/Desktop/soles-site-work/soles-site-dev/src/components/firebase/context.js",
@@ -710,7 +772,7 @@
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -724,6 +786,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Link"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -741,16 +804,102 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/constants/roles.js",
+					"file": "src/constants/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 325,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								214,
+								214
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/components/signin/index.js",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 2695,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1834,
+								1834
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 367.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/custom.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5136,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								600,
+								600
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/components/profile/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1220,
 						"regions":
 						{
 						},
@@ -763,13 +912,131 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/components/test/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/components/app/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1540,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								812,
+								821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/components/signup/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 2.0,
+						"translation.y": 2697.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/components/about/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13638,
+								13647
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 1067.0,
+						"translation.y": 3339.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
