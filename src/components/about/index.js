@@ -66,100 +66,6 @@ const AboutPageOld = () => (
         </div>
       </div>
     </section>
-
-    <section id="history">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12 text-center">
-            <h2 className="section-heading text-uppercase">History</h2>
-            <h3 className="section-subheading text-muted">Let us teach you a little about us...</h3>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-12">
-            <ul className="timeline">
-              <li className="timeline-inverted">
-                <div className="timeline-image">
-                  <img src="/imgs/shpe-logo.jpg" className="rounded-circle img-fluid" alt="shpe logo"/>
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4>1974</h4>
-                    <h4 className="subheading">SHPE Founded</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p className="text-muted">The Society of Hispanic Professional Engineers (SHPE) was founded in the Los Angeles area in 1978. Their objective was to form a national organization of professional engineers to serve as role models in the Hispanic community.</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="/imgs/soles-sun-square.png" alt="rounded-circle" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4>1978</h4>
-                    <h4 className="subheading">SOLES Founded</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p className="text-muted">The Society of Latino Engineers and Scientists (SOLES) was established as a chapter of SHPE at UCLA with the intent of increasing Hispanic representation amongst STEM majors at the university.</p>
-                  </div>
-                </div>
-              </li>
-              <li className="timeline-inverted">
-                <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="/img/about/2.jpg" alt="rounded-circle" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4>March 2011</h4>
-                    <h4 className="subheading">An Agency is Born</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="img/about/3.jpg" alt="rounded-circle" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4>December 2012</h4>
-                    <h4 className="subheading">Transition to Full Service</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li className="timeline-inverted">
-                <div className="timeline-image">
-                  <img className="rounded-circle img-fluid" src="img/about/4.jpg" alt="rounded-circle" />
-                </div>
-                <div className="timeline-panel">
-                  <div className="timeline-heading">
-                    <h4>July 2014</h4>
-                    <h4 className="subheading">Phase Two Expansion</h4>
-                  </div>
-                  <div className="timeline-body">
-                    <p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                  </div>
-                </div>
-              </li>
-              <li className="timeline-inverted">
-                <div className="timeline-image">
-                  <h4>Be Part
-                    <br />Of Our
-                    <br />Story!</h4>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
 );
 */
 
@@ -278,9 +184,91 @@ class AboutPage extends Component {
 
         {/* history section */}
         <Container id="history">
-          history section in progress
-        </Container>
+          <Row>
+            <Col lg={{span:12}} className="text-center">
+              <h2 className="section-heading text-uppercase"><br></br><br></br>History</h2>
+              <h3 className="section-subheading text-muted">Let us teach you a little about us...</h3>
+            </Col>
+          </Row>
 
+          <Row>
+            <Col lg={{span:12}}>
+              <ul className="timeline">
+
+                <li className="timeline-inverted">
+                  <div className="timeline-image">
+                    <img src="https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,w_160/v1558485754/shpe_national_logo.png" className="rounded-circle img-fluid" alt="SHPE Logo"/>
+                  </div>
+                  <div className="timeline-panel">
+                    <div className="timeline-heading">
+                      <h4>1974</h4>
+                      <h4 className="subheading">SHPE Founded</h4>
+                    </div>
+                    <div className="timeline-body">
+                      <p className="text-muted">The <a href="https://shpe.org" target="_blank" rel="noopener noreferrer">Society of Hispanic Professional Engineers</a> was founded in the Los Angeles area in 1978. Their objective is to form a national organization of professional engineers to serve as role models in the Hispanic community.</p>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div className="timeline-image">
+                    <img className="rounded-circle img-fluid" src='https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,h_160,q_100,w_160/soles-sun.png' alt="SOLES Logo" />
+                  </div>
+                  <div className="timeline-panel">
+                    <div className="timeline-heading">
+                      <h4>1978</h4>
+                      <h4 className="subheading">SOLES Founded</h4>
+                    </div>
+                    <div className="timeline-body">
+                      <p className="text-muted">The Society of Latino Engineers and Scientists was established as a chapter of SHPE at UCLA with the intent of increasing Hispanic representation amongst STEM majors at the university.</p>
+                    </div>
+                  </div>
+                </li>
+
+                <li className="timeline-inverted">
+                  <div className="timeline-image">
+                    <img className="rounded-circle img-fluid" src="https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,w_160/v1558485754/ceed_logo.png" alt="CEED Logo" />
+                  </div>
+                  <div className="timeline-panel">
+                    <div className="timeline-heading">
+                      <h4>1983</h4>
+                      <h4 className="subheading">CEED Founded</h4>
+                    </div>
+                    <div className="timeline-body">
+                      <p className="text-muted">The <a href="https://www.ceed.ucla.edu/mission/" target="_blank" rel="noopener noreferrer">Center for Excellence in Engineering and Diversity</a> was established at UCLA to bolster the representation of underrepresented minorities in engineering at UCLA.</p>
+                    </div>
+                  </div>
+                </li>
+
+                <li>
+                  <div className="timeline-image">
+                    <FontAwesomeIcon icon={['fas', 'users']} color="white" transform="down-7" size="5x"/>
+                  </div>
+                  <div className="timeline-panel">
+                    <div className="timeline-heading">
+                      <h4>1992</h4>
+                      <h4 className="subheading">UCLA Tri-Org Founded</h4>
+                    </div>
+                    <div className="timeline-body">
+                      <p className="text-muted">Comprising of the Society of Latino Engineers and Scientists, the <a href="https://nsbebruins.wixsite.com/nsbe" target="_blank" rel="noopener noreferrer">National Society of Black Engineers</a> and the <a href="https://www.facebook.com/uclaaises" target="_blank" rel="noopener noreferrer">American Indian Science and Engineering Society</a>, the UCLA Tri-Org was formed to increase the representation of minority peoples in STEM fields.</p>
+                    </div>
+                  </div>
+                </li>
+
+                <li className="timeline-inverted">
+                  <div className="timeline-image">
+                    <h4>Be Part
+                      <br />Of Our
+                      <br />Story!</h4>
+                  </div>
+                </li>
+
+              </ul>
+              <br></br>
+              <br></br>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

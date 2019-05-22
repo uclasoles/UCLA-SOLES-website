@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import { SmallMasthead } from '../navigation'
 import { AuthUserContext , withAuthorization} from '../session';
 import PasswordChangeForm from '../passwordchange';
 import { compose } from 'recompose';
@@ -11,12 +12,8 @@ const ProfilePage = () => (
   <AuthUserContext.Consumer>
 		    {authUser => (
 		    	<div>
-		    		<header className="masthead">
-							<br></br><br></br><br></br>
-							<div className="container py-5">
-							</div>
-						</header>
-		        <h1>My Account</h1>
+		    		<SmallMasthead />
+		    		<h1>My Account</h1>
 		        <MyAccountForm />
 		        <PasswordChangeForm />
 		      </div>
@@ -41,8 +38,6 @@ class MyAccountFormBase extends Component {
     super(props);
 
     this.state = {...INITIAL_STATE};
-
-
   }
 
   render() {

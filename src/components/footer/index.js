@@ -44,7 +44,7 @@ class Footer extends Component {
           </Row>
           <Row className="footer-copyright">
             <Col>
-                <small>&copy; Copyright 2017-2018, SOLES at UCLA</small>
+                <small>&copy; Copyright 2018-2019, SOLES at UCLA</small>
             </Col>
           </Row>
         </Container>

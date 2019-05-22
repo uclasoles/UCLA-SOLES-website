@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const CompaniesPage = () => (
-  <div>
-    <h1>Companies</h1>
-  </div>
-);
+import { SmallMasthead } from '../navigation'
+import Container from 'react-bootstrap/Container';
+
+class CompaniesPage extends Component {
+	render () {
+		return(
+			<div>
+		  	<SmallMasthead />
+		    <h1>Companies</h1>
+	  	</div>
+		);
+	}
+}
+
+
 
 export default CompaniesPage;

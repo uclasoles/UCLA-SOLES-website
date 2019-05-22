@@ -10,6 +10,7 @@ import '../../custom.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
 
 // fontawesome stuff
 import '../../fontawesome.js';
@@ -102,4 +103,17 @@ const NavigationNonAuth = compose(
   withFirebase,
 ) (NavigationNonAuthBase);
 
+class SmallMasthead extends Component {
+  render () {
+    return (
+      <header className="masthead">
+        <br></br>
+        <Container className="py-5"> </Container>
+      </header>
+    );
+  }
+}
+
 export default withFirebase(Navigation);
+
+export { SmallMasthead };
