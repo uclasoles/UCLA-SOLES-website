@@ -11,6 +11,7 @@ import AdminPage from '../admin';
 import CompaniesPage from '../companies';
 import StudentsPage from '../students';
 import TestBankPage from '../testbank';
+import TestUploadPage from '../testupload';
 import Footer from '../footer';
 import ScrollToTop from '../scroll';
 
@@ -31,6 +32,7 @@ const App = () => (
         <Route exact path={ROUTES.COMPANIES} component={CompaniesPage}/>
         <Route exact path={ROUTES.STUDENTS} component={StudentsPage}/>
         <Route exact path={ROUTES.TESTBANK} component={TestBankPage}/>
+        <Route exact path={ROUTES.TESTUPLOAD} component ={TestUploadPage}/>
         <Redirect to={ROUTES.ABOUT}/>
       </Switch>
       <Footer />

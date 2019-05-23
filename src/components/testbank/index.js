@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { LinkContainer } from 'react-router-bootstrap';
 
+import { SmallMasthead } from '../navigation'
 import { AuthUserContext, withAuthorization } from '../session';
 import * as ROUTES from '../../constants/routes';
 
@@ -102,35 +104,46 @@ class TestBankPage extends Component {
         {authUser => (
           <div>
             {/* header area */}
-            <Container fluid>
-              <Row id="centered-masthead" className="justify-content-center align-items-center">
-                <Card text="dark" style={{ width: '30rem' }}>
-                  <Card.Body>
-                    <Card.Title>Test Bank</Card.Title>
-                    <Form>
-                      <Form.Group href='test-filter' controlId="exampleForm.ControlSelect1">
-                        <Form.Row>
-                          <Col>
-                            <Form.Label>Select a Department</Form.Label>
-                            <Form.Control as="select" onChange={this.handleDeptChange}>
-                              <option>None selected</option>
-                              {this.state.deptOptions.map(t => <option>{t}</option>)}
-                            </Form.Control>
-                          </Col>
-                          <Col>
-                            <Form.Label>Select a Class</Form.Label>
-                            <Form.Control as="select" onChange={this.handleClassChange}>
-                              <option>None selected</option>
-                              {this.state.classOptions.map(t => <option>{t}</option>)}
-                            </Form.Control>
-                          </Col>
-                        </Form.Row>
-                      </Form.Group>
-                    </Form>
-                  </Card.Body>
-                </Card>
-              </Row>
-            </Container>
+            <SmallMasthead></SmallMasthead>
+            <Card className="text-center" text="dark" style={{ justifyContent: 'center' }}>
+              <Card.Header>
+                <LinkContainer to={ROUTES.TESTUPLOAD}>
+                  <Button variant="primary">Upload a Test</Button>
+                </LinkContainer>
+              </Card.Header>
+              <Card.Body>
+                <Card.Title>Test Bank</Card.Title>
+                <Form>
+                  <Form.Group href='test-filter' controlId="exampleForm.ControlSelect1">
+                    <Form.Row>
+                      <Col xs={8}>
+                        <Form.Label>Test Search</Form.Label>
+                        <InputGroup>
+                          <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
+                          </InputGroup.Prepend>
+                          <Form.Control as="input" placeholder="Enter Professor, Class, Year, etc.."></Form.Control>
+                        </InputGroup>
+                      </Col>
+                      <Col>
+                        <Form.Label>Department</Form.Label>
+                        <Form.Control as="select" onChange={this.handleDeptChange}>
+                          <option>None selected</option>
+                          {this.state.deptOptions.map(t => <option>{t}</option>)}
+                        </Form.Control>
+                      </Col>
+                      <Col>
+                        <Form.Label>Class</Form.Label>
+                        <Form.Control as="select" onChange={this.handleClassChange}>
+                          <option>None selected</option>
+                          {this.state.classOptions.map(t => <option>{t}</option>)}
+                        </Form.Control>
+                      </Col>
+                    </Form.Row>
+                  </Form.Group>
+                </Form>
+              </Card.Body>
+            </Card>
 
             <Table hover>
               <thead>
@@ -153,63 +166,7 @@ class TestBankPage extends Component {
                   </tr>
                 )}
               </tbody>
-            </Table>     
-            <Card style={{ width:'25rem' }}>
-              <Card.Header>Upload a Test</Card.Header>
-              <Form>
-                <Form.Row>
-                  <Col>
-                    <Form.Label>Select a Department</Form.Label>
-                    <Form.Control as="select">
-                      {this.state.initTests.map(t => <option>{t.department}</option>)}
-                    </Form.Control>
-                  </Col>
-                  <Col>
-                    <Form.Label>Select a Class</Form.Label>
-                    <Form.Control as="select">
-                      {this.state.initTests.map(t => <option>{t.class}</option>)}
-                    </Form.Control>
-                  </Col>
-                </Form.Row>
-
-                <Form.Row>
-                  <Form.Label>Professor</Form.Label>
-                  <Form.Control as="input" placeholder="Enter Name.."></Form.Control>
-                </Form.Row>
-
-                <Form.Row>
-                  <Col>
-                    <Form.Label>Year</Form.Label>
-                    <Form.Control as="select">
-                      <option>2019</option>
-                      <option>2018</option>
-                      <option>2017</option>
-                      <option>2016</option>
-                      <option>2015</option>
-                      <option>2014</option>
-                      <option>2013</option>
-                      <option>2012</option>
-                    </Form.Control>
-                  </Col>
-                  <Col>
-                    <Form.Label>Quarter</Form.Label>
-                    <Form.Control as="select">
-                      <option>Fall</option>
-                      <option>Winter</option>
-                      <option>Spring</option>
-                    </Form.Control>
-                  </Col>
-                  <Col>
-                    <Form.Label>Type</Form.Label>
-                    <Form.Control as="select">
-                      <option>Midterm 1</option>
-                      <option>Midterm 2</option>
-                      <option>Final</option>
-                    </Form.Control>
-                  </Col>
-                </Form.Row>
-              </Form> 
-            </Card>      
+            </Table>          
           </div> 
         )}
       </AuthUserContext.Consumer>

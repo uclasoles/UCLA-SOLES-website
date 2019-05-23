@@ -8,4 +8,4 @@ export const COMPANIES = '/companies';
 export const STUDENTS = '/students';
 export const PROFILE = '/profile';
 export const TESTBANK = '/testbank';
-
+export const TESTUPLOAD = '/testupload';
