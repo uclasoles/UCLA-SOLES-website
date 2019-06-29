@@ -4,6 +4,11 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
+import { LinkContainer } from 'react-router-bootstrap';
+
+// fontawesome stuff
+import '../../fontawesome.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { AuthUserContext, withAuthorization } from '../session';
 import * as ROUTES from '../../constants/routes';
@@ -20,10 +25,14 @@ class TestUploadPage extends Component {
           <div>
               <Container fluid>
                 <Row id="centered-masthead" className="justify-content-center align-items-center">
-                        <Card style={{ width:'25rem' }}>
-                    <Card.Header>Upload a Test</Card.Header>
+                <Card style={{ color: 'black', width:'30rem' }}>
+                  <Card.Header as="h3" style={{ color: 'black', textAlign: 'left' }}>
+                    <LinkContainer to={ROUTES.TESTBANK}><FontAwesomeIcon icon={['fas', 'chevron-left']} size='xs' className="card-heading-icon"/></LinkContainer>
+                    Upload a Test
+                  </Card.Header>
+                  <Card.Body>
                     <Form>
-                        <Form.Row>
+                      <Form.Row>
                         <Col>
                             <Form.Label>Select a Department</Form.Label>
                             <Form.Control as="select">
@@ -46,14 +55,14 @@ class TestUploadPage extends Component {
                             <Form.Label>Select a Class</Form.Label>
                             <Form.Control as="input" placeholder="Enter class number.."></Form.Control>
                         </Col>
-                        </Form.Row>
+                      </Form.Row>
 
-                        <Form.Row>
+                      <Form.Row style={{ justifyContent: 'center' }}>
                         <Form.Label>Professor</Form.Label>
                         <Form.Control as="input" placeholder="Enter Name.."></Form.Control>
-                        </Form.Row>
+                      </Form.Row>
 
-                        <Form.Row>
+                      <Form.Row>
                         <Col>
                             <Form.Label>Year</Form.Label>
                             <Form.Control as="select">
@@ -83,9 +92,10 @@ class TestUploadPage extends Component {
                             <option>Final</option>
                             </Form.Control>
                         </Col>
-                        </Form.Row>
+                      </Form.Row>
                     </Form> 
-                    </Card>
+                    </Card.Body>
+                  </Card>
                 </Row>
               </Container>
           </div> 

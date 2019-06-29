@@ -8,6 +8,11 @@ import { withFirebase } from '../firebase';
 
 import '../../custom.css';
 
+// react bootstrap components
+import Nav from 'react-bootstrap/Nav';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+
 const ProfilePage = () => (
   <AuthUserContext.Consumer>
 		    {authUser => (
@@ -15,7 +20,6 @@ const ProfilePage = () => (
 		    		<SmallMasthead />
 		    		<h1>My Account</h1>
 		        <MyAccountForm />
-		        <PasswordChangeForm />
 		      </div>
 		    )}
   </AuthUserContext.Consumer>
@@ -42,7 +46,19 @@ class MyAccountFormBase extends Component {
 
   render() {
   	return (
-  		<h1>My Account</h1>
+			<div>
+				<Tabs defaultActiveKey="password_reset" transition={false} id='uncontrolled-tab-example'>
+					<Tab eventKey="password_reset" title="Password Reset">
+						<PasswordChangeForm />
+					</Tab>
+					<Tab eventKey="my_tests" title="My Tests">
+						<h2>My Tests</h2>
+					</Tab>
+					<Tab eventKey="my_features" title="My Features">
+						<h2>My Features</h2>
+					</Tab>
+				</Tabs>
+			</div>
   	);
   }
 }

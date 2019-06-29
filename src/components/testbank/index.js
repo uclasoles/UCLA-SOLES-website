@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Table from 'react-bootstrap/Table';
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
@@ -10,6 +11,10 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { SmallMasthead } from '../navigation'
 import { AuthUserContext, withAuthorization } from '../session';
 import * as ROUTES from '../../constants/routes';
+
+// fontawesome stuff
+import '../../fontawesome.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class TestBankPage extends Component {
   constructor(props) {
@@ -106,18 +111,20 @@ class TestBankPage extends Component {
             {/* header area */}
             <SmallMasthead></SmallMasthead>
             <Card className="text-center" text="dark" style={{ justifyContent: 'center' }}>
-              <Card.Header>
-                <LinkContainer to={ROUTES.TESTUPLOAD}>
-                  <Button variant="primary">Upload a Test</Button>
-                </LinkContainer>
+              <Card.Header as="h3" style={{ color: 'black' }}>
+                Test Bank
               </Card.Header>
               <Card.Body>
-                <Card.Title>Test Bank</Card.Title>
+                <Row style={{ alignItems: 'right'}}>
+                  <LinkContainer to={ROUTES.TESTUPLOAD}>
+                    <Button style="primary">Upload a Test</Button>
+                  </LinkContainer>
+                </Row>
+                <br></br>
                 <Form>
                   <Form.Group href='test-filter' controlId="exampleForm.ControlSelect1">
                     <Form.Row>
                       <Col xs={8}>
-                        <Form.Label>Test Search</Form.Label>
                         <InputGroup>
                           <InputGroup.Prepend>
                             <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
@@ -126,18 +133,26 @@ class TestBankPage extends Component {
                         </InputGroup>
                       </Col>
                       <Col>
-                        <Form.Label>Department</Form.Label>
-                        <Form.Control as="select" onChange={this.handleDeptChange}>
-                          <option>None selected</option>
-                          {this.state.deptOptions.map(t => <option>{t}</option>)}
-                        </Form.Control>
+                        <InputGroup>
+                          <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon1">Dept</InputGroup.Text>
+                          </InputGroup.Prepend>
+                          <Form.Control as="select" onChange={this.handleDeptChange}>
+                            <option>None selected</option>
+                            {this.state.deptOptions.map(t => <option>{t}</option>)}
+                          </Form.Control>
+                        </InputGroup>
                       </Col>
                       <Col>
-                        <Form.Label>Class</Form.Label>
-                        <Form.Control as="select" onChange={this.handleClassChange}>
-                          <option>None selected</option>
-                          {this.state.classOptions.map(t => <option>{t}</option>)}
-                        </Form.Control>
+                        <InputGroup>
+                          <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon1">Class</InputGroup.Text>
+                          </InputGroup.Prepend>
+                          <Form.Control as="select" onChange={this.handleClassChange}>
+                            <option>None selected</option>
+                            {this.state.classOptions.map(t => <option>{t}</option>)}
+                          </Form.Control>
+                        </InputGroup>
                       </Col>
                     </Form.Row>
                   </Form.Group>
