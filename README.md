@@ -1,10 +1,21 @@
-# SOLES Website
+# SOLES@UCLA Website
 
-This repository contains the source code of UCLA SOLES' website. This repository is owned by UCLA SOLES' Technical Chair email account, uclasoles.technicalchair@gmail.com.
+>SOLES at UCLA changes lives by empowering the Hispanic community to realize its fullest potential and to impact the world through STEM awareness, access, support, and development.
 
-## Development and Usage Information
+![David](https://img.shields.io/david/uclasoles/UCLA-SOLES-website.svg)
+![GitHub issues](https://img.shields.io/github/issues/uclasoles/UCLA-SOLES-website.svg)
 
-Active SOLES members must consult with official SOLES web devlopment committee or Technical Chair before working on any official contributions to this repository. Pull requests will be reviewed and approved by the leader of the web development committee or another qualified individual.
+This repository contains the source code of the Society of Latino Engineers @ UCLA website. The project is owned by SOLES@UCLA's Technical Chair email account, uclasoles.technicalchair@gmail.com . Currently, the lead organizer of this project is Kyle Romero, kyleromero98@gmail.com .
+
+<img src="header.png" width="750">
+
+## Installation
+
+No installation is required to use this site. The current release version of the website is hosted [here](https://soles-website-dev.web.app/). Please note that the website is under construction and is not considered functional at this time.
+
+## Development Set-Up
+
+# The Rest of this README is in the process of being rewritten
 
 ### Account and Tech Stack Info
 
