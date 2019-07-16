@@ -9,11 +9,36 @@ This repository contains the source code of the Society of Latino Engineers @ UC
 
 ## Installation
 
-No installation is required to use this site. The current release version of the website is hosted [here](https://soles-website-dev.web.app/). Please note that the website is under construction and is not considered functional at this time.
+No installation is required to use this site. The currently hosted version of the website can be found [here](https://soles-website-dev.web.app/). Please note that the website is under construction and is not considered functional at this time.
 
-## Development Set-Up
+## Development Quick Set-Up
 
-# The Rest of this README is in the process of being rewritten
+Before contributing to this repository, please see our Contributing Guidelines (add link to that here). The following is a quick set-up guide for this project:
+
+```
+> git clone git@github.com:uclasoles/UCLA-SOLES-website.git soles-site-dev
+> cd soles-site-dev
+> npm install
+```
+
+For more detailed information on setting up your development environment please see our Wiki (add link to the wiki here).
+
+## Release History
+- Planned: 0.1.0 (October 1st, 2019)
+    - Goal: The website serves as an informational online presence for SOLES@UCLA. 
+    - Feature: Students can create an account, log-in, and manage their account
+    - Feature: Administrators can log-in and access some basic administrative features
+    - Feature: Students are able to upload tests and view the SOLES Test Bank
+
+## Current Organizer
+
+Kyle Romero - [@k_rommie](https://twitter.com/k_rommie) - kyleromero98@gmail.com
+
+[https://github.com/kyleromero98](https://github.com/kyleromero98)
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+# Below this line is legacy information that will be moved to the Wiki and Contributing section of the project when that is written
 
 ### Account and Tech Stack Info
 
@@ -54,24 +79,6 @@ When you are ready to push a production build of the site, one can do so with th
 16. Accept default option for Storage Rules.
 17. `firebase deploy`
 18. The site should now be available at https://soles-website-dev.firebaseapp.com
-
-## Roadmap
-
-- Refactor about page to use react bootstrap
-- Revise companies field to include temporary information
-- Update/add history section to the about page
-- Cleanup additional images on the starting page
-- Research protection of routes/querying role info in secure manner
-- Migrate major querying to use HTTP Requests through Cloud Functions
-- Figure out anchor/page issues with router to go between pages
-- Create admin page that is authorization protected to administrators ([Role-Based User Permissions in Firebase - YouTube](https://www.youtube.com/watch?v=3qODuvp1Zp8))
-- Build administrator functions for admin page (seeing users, filtering, administrative functions)
-- Add features required to edit profile to the profile page
-- Write content for companies pages
-- Investigate methods of creating a virtual environment for npm that can be stored on GitHub
-- Update GitHub information with regard to account information, technology stack, and npm packages (should just have to run command npm install)
-- Add Instagram, Facebook, and Snapchat links to About page
-- Add By-Laws section to the Students page
 
 ## References
 
