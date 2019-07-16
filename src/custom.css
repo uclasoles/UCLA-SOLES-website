@@ -212,10 +212,44 @@ h3.section-subheading {
   }
 }
 
+/* subscribe footer styling */
+#subscribe-footer {
+  padding: 20px;
+  background-image: url('https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,w_2000/v1557430586/ucla-header.png');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 300px;
+  text-align: center;
+  color: white;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#subscribe-footer:before {
+  content: '';
+  position: absolute;
+  width: 100%; height:100%;
+  top:0; left:0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+#subscribe-footer #subscribe-form {
+  z-index: 100;
+  width: 700px;
+
+}
+
 /* footer styling */
 #footer {
   background-color: rgba(52, 58, 64);
   color: white;
+  padding: 20px;
 }
 
 #footer .footer-link {
@@ -439,4 +473,11 @@ h3.section-subheading {
     padding: 0 100px 20px 20px;
   }
 }
+
+/* calendar styling */
+.calendar-paragraph {
+  font-size: 15px;
+  font-style: italic;
+}
+
 

@@ -13,6 +13,7 @@ import StudentsPage from '../students';
 import TestBankPage from '../testbank';
 import TestUploadPage from '../testupload';
 import Footer from '../footer';
+import SubscribeFooter from '../subscribefooter';
 import ScrollToTop from '../scroll';
 
 import * as ROUTES from '../../constants/routes';
@@ -35,6 +36,7 @@ const App = () => (
         <Route exact path={ROUTES.TESTUPLOAD} component ={TestUploadPage}/>
         <Redirect to={ROUTES.ABOUT}/>
       </Switch>
+      <SubscribeFooter />
       <Footer />
     </ScrollToTop>
   </Router>

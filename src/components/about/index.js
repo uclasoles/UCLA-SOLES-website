@@ -21,7 +21,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 /*
 const AboutPageOld = () => (
-        NOTE: THIS IS GETTING MOVED TO THE COMPANIES PAGE
+        NOTE: THIS IS GETTING MOVED TO THE COMPANIES PAGE SO KEEP IT FOR NOW
         <div className="row" style={{marginTop: '50px'}}>
           <div className="col-md-3">
           </div>
@@ -82,7 +82,7 @@ class AboutPage extends Component {
         <Container fluid>
           <Row id="centered-masthead" className="justify-content-center align-items-center">
             <div className="intro-text">
-              <div className="intro-lead-in">Society of Latino Engineers and Scientists</div>
+              <div className="intro-lead-in">Society of Latino Engineers</div>
               <div className="intro-heading">SOLES at UCLA</div>
               <Button variant="primary" onClick={this.scrollToBottom}>Learn More<FontAwesomeIcon icon={['fas', 'angle-down']} className="dropdown-icon-right" inverted="true"/></Button>
             </div>
@@ -205,7 +205,7 @@ class AboutPage extends Component {
                       <h4 className="subheading">SHPE Founded</h4>
                     </div>
                     <div className="timeline-body">
-                      <p className="text-muted">The <a href="https://shpe.org" target="_blank" rel="noopener noreferrer">Society of Hispanic Professional Engineers</a> was founded in the Los Angeles area in 1978. Their objective is to form a national organization of professional engineers to serve as role models in the Hispanic community.</p>
+                      <p className="text-muted">The <a href="https://shpe.org" target="_blank" rel="noopener noreferrer">Society of Hispanic Professional Engineers</a> was founded in the Los Angeles area in 1978. Their objective is to form a national organization of professional Engineers to serve as role models in the Hispanic community.</p>
                     </div>
                   </div>
                 </li>
@@ -220,7 +220,7 @@ class AboutPage extends Component {
                       <h4 className="subheading">SOLES Founded</h4>
                     </div>
                     <div className="timeline-body">
-                      <p className="text-muted">The Society of Latino Engineers and Scientists was established as a chapter of SHPE at UCLA with the intent of increasing Hispanic representation amongst STEM majors at the university.</p>
+                      <p className="text-muted">The Society of Latino Engineers was established as a chapter of SHPE at UCLA with the intent of increasing Hispanic representation amongst STEM majors at the university.</p>
                     </div>
                   </div>
                 </li>
@@ -250,7 +250,7 @@ class AboutPage extends Component {
                       <h4 className="subheading">UCLA Tri-Org Founded</h4>
                     </div>
                     <div className="timeline-body">
-                      <p className="text-muted">Comprising of the Society of Latino Engineers and Scientists, the <a href="https://nsbebruins.wixsite.com/nsbe" target="_blank" rel="noopener noreferrer">National Society of Black Engineers</a> and the <a href="https://www.facebook.com/uclaaises" target="_blank" rel="noopener noreferrer">American Indian Science and Engineering Society</a>, the UCLA Tri-Org was formed to increase the representation of minority peoples in STEM fields.</p>
+                      <p className="text-muted">Comprising of the Society of Latino Engineers, the <a href="https://nsbebruins.wixsite.com/nsbe" target="_blank" rel="noopener noreferrer">National Society of Black Engineers</a> and the <a href="https://www.facebook.com/uclaaises" target="_blank" rel="noopener noreferrer">American Indian Science and Engineering Society</a>, the UCLA Tri-Org was formed to increase the representation of minority peoples in STEM fields.</p>
                     </div>
                   </div>
                 </li>
