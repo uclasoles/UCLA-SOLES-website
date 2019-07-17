@@ -1,60 +1,40 @@
-import React, { Component } from 'react';
-
-import { withFirebase } from '../firebase';
-import * as ROUTES from '../../constants/routes';
-
-// css and bootstrap imports
-import '../../custom.css';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Card from 'react-bootstrap/Card';
-
-// fontawesome stuff
-import '../../fontawesome.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// allows react router and bootstrap to play nicely
+import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Form from 'react-bootstrap/Form';
+import { connect } from 'react-redux';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Redirect } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
+import '../../custom.css';
+import '../../fontawesome.js';
+import { resetPassword } from '../../store/actions/authActions';
 
-// TODO
-// * Add validation to form fields on submission
-// * Look into better way to provide user feedback from Firebase calls
+class PasswordForgetPage extends Component {
+  state = {
+    email: ''
+  }
 
-const INITIAL_STATE = {
-  email: '',
-  error: null,
-};
-
-class PasswordForgetPageBase extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { ...INITIAL_STATE };
   }
 
   onSubmit = event => {
-    const { email } = this.state;
-
-    this.props.firebase
-      .doPasswordReset(email)
-      .then(() => {
-        this.setState({ ...INITIAL_STATE });
-      })
-      .catch(error => {
-        this.setState({ error });
-      });
-
-    event.preventDefault();
+    event.preventDefault()
+    this.props.resetPassword(this.state.email)
   };
 
   onChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.target.name]: event.target.value })
   };
 
   render() {
-    const { email, error } = this.state;
+    const { email } = this.state
+    const { authError } = this.props
 
     const isInvalid = email === '';
+    if (authError === 'success') return <Redirect to={ROUTES.SIGN_IN}> </Redirect>
 
     return (
       <div id="centered-masthead">
@@ -69,7 +49,7 @@ class PasswordForgetPageBase extends Component {
                 <Form.Group controlId="formResetPassword">
                   <Form.Control name="email" value={email} onChange={this.onChange} type="email" placeholder="Email"/>
                 </Form.Group>
-                {error && <Card.Text style={{ color: 'red', fontSize:'small'}}>{error.message}</Card.Text>}
+                {authError && <Card.Text style={{ color: 'red', fontSize:'small'}}>{authError.message}</Card.Text>}
                 <Button disabled={isInvalid} type="submit" variant='primary' block>Reset</Button>
               </Form> 
             </Card.Body>
@@ -80,7 +60,17 @@ class PasswordForgetPageBase extends Component {
   }
 }
 
-const PasswordForgetPage = withFirebase(PasswordForgetPageBase)
+const mapStateToProps = ( state ) => {
+  return {
+    authError: state.auth.authError
+  };
+};
 
-export default PasswordForgetPage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    resetPassword: (email) => dispatch(resetPassword(email))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PasswordForgetPage)
 
