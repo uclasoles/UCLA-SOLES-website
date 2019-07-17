@@ -1,50 +1,27 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
-import { compose } from 'recompose';
-
-import { withFirebase } from '../firebase';
 import * as ROUTES from '../../constants/routes';
 import { Link } from 'react-router-dom';
-
-// bootstrap and css components
+import { connect } from "react-redux";
+import { signIn } from '../../store/actions/authActions'
+import { Redirect } from 'react-router-dom';
 import '../../custom.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 
-// TODO
-// * Add validation to form fields on submission
-// * Look into better way to provide user feedback from Firebase calls
+class SignIn extends Component {
+  state = {
+    email: '',
+    password: ''
+  }
 
-// initial state of the form
-const INITIAL_STATE = {
-	email: '',
-	password: '',
-	error: null,
-};
-
-
-class SignInPageBase extends Component {
 	constructor (props) {
 		super(props);
-		this.state = { ...INITIAL_STATE };
 	}
 
-	// attempt to sign in
 	onSubmit = event => {
-  	const { email, password } = this.state;
-
-  	this.props.firebase
-    	.doSignInWithEmailAndPassword(email, password)
-    	.then(() => {
-      	this.setState({ ...INITIAL_STATE });
-      	this.props.history.push(ROUTES.ABOUT);
-    	})
-    	.catch(error => {
-      	this.setState({ error });
-    	});
-    // prevents automatic reloading of the page
-  	event.preventDefault();
+    event.preventDefault();
+    this.props.signIn(this.state);
 	};
 
 	onChange = event => {
@@ -52,29 +29,31 @@ class SignInPageBase extends Component {
 	};
 
 	render() {
-    const { email, password, error } = this.state;
+    const { auth, authError } = this.props
+    const { email, password } = this.state;
+    if (auth.uid) return <Redirect to='/' />
 
     const isInvalid = password === '' || email === '';
 
     return (
-    	<div id="centered-masthead">
+      <div id="centered-masthead">
 				<div className="row h-100 justify-content-center align-items-center">
 					<Card style={{ width:'20rem' }}>
-					  <Card.Header as="h3" style={{ color: 'black' }}>Sign In</Card.Header>
-					  <Card.Body>
-					    <Form onSubmit={this.onSubmit}>
-				      	<Form.Group controlId="formSignInEmail">
-							    <Form.Control name="email" value={email} onChange={this.onChange} type="email" placeholder="Email Address"/>
-							  </Form.Group>
-				      	<Form.Group controlId="formSignInPassword">
-							    <Form.Control name="password" value={password} onChange={this.onChange} type="password" placeholder="Password"/>
-							  </Form.Group>
-							  {error && <Card.Text style={{ color: 'red', fontSize:'small'}}>{error.message}</Card.Text>}
-				        <Button disabled={isInvalid} type="submit" variant='primary' block>Sign In</Button>
-			      	</Form>
-							<p><Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link></p>
-							<p style={{color:"black"}}>Don&#8217;t have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link></p>
-					  </Card.Body>
+            <Card.Header as="h3" style={{ color: 'black' }}>Sign In</Card.Header>
+            <Card.Body>
+              <Form onSubmit={this.onSubmit}>
+                <Form.Group controlId="formSignInEmail">
+                  <Form.Control name="email" value={email} onChange={this.onChange} type="email" placeholder="Email Address"/>
+                </Form.Group>
+                <Form.Group controlId="formSignInPassword">
+                  <Form.Control name="password" value={password} onChange={this.onChange} type="password" placeholder="Password"/>
+                </Form.Group>
+                {authError && <Card.Text style={{ color: 'red', fontSize:'small'}}>{authError.message}</Card.Text>}
+                <Button disabled={isInvalid} type="submit" variant='primary' block>Sign In</Button>
+              </Form>
+              <p><Link to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link></p>
+              <p style={{color:"black"}}>Don&#8217;t have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link></p>
+            </Card.Body>
 					</Card>
 				</div>
 			</div>
@@ -82,9 +61,17 @@ class SignInPageBase extends Component {
 	}
 }
 
-const SignInPage = compose(
-  withRouter,
-  withFirebase,
-)(SignInPageBase);
+const mapStateToProps = ( state ) => {
+  return {
+    auth: state.firebase.auth,
+    authError: state.auth.authError
+  };
+};
 
-export default SignInPage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

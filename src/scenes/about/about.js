@@ -1,23 +1,14 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
-// bootstrap and css components
-import '../../custom.css';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-
-// fontawesome stuff
-import '../../fontawesome.js';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// link stuff
-import * as ROUTES from '../../constants/routes';
-import { Link } from 'react-router-dom';
-
-// allows react router and bootstrap to play nicely
 import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
+import '../../custom.css';
+import '../../fontawesome.js';
 
 /*
 const AboutPageOld = () => (
@@ -69,7 +60,7 @@ const AboutPageOld = () => (
 );
 */
 
-class AboutPage extends Component {
+class About extends Component {
 
   scrollToBottom = () => {
     this.whatWeDo.scrollIntoView({ behavior: "smooth" });
@@ -274,4 +265,4 @@ class AboutPage extends Component {
   }
 }
 
-export default AboutPage;
+export default About;

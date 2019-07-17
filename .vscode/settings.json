@@ -1,0 +1,11 @@
+{
+    "cSpell.words": [
+        "ZJTH"
+    ],
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.singleQuote": true,
+    "prettier.eslintIntegration": true,
+    "editor.detectIndentation": false
+}
