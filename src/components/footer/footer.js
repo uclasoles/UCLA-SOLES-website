@@ -1,17 +1,12 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Component } from 'react';
-
-import * as ROUTES from '../../constants/routes';
-import { Link } from 'react-router-dom';
-
-// bootstrap and css components
-import '../../custom.css';
+import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
-// fontawesome stuff
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
+import '../../custom.css';
 import '../../fontawesome.js';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Footer extends Component {
   render () {
