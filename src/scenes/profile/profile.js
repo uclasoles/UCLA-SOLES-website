@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import { SmallMasthead } from '../navigation/navigation'
-import { Redirect } from 'react-router-dom';
-import { connect } from "react-redux";
-import PasswordChangeForm from '../passwordchange';
-import '../../custom.css';
+import React, { Component } from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+import { connect } from "react-redux";
+import { Redirect } from 'react-router-dom';
+import { SmallMasthead } from '../../components/navigation/navigation';
+import '../../custom.css';
+import PasswordChangeForm from './passwordChange';
 
 class ProfilePage extends Component {
   constructor (props) {

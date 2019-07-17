@@ -1,19 +1,19 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { Component } from 'react';
-import Button from 'react-bootstrap/Button';
-import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import { connect } from 'react-redux';
-import { LinkContainer } from 'react-router-bootstrap';
-import { Redirect } from 'react-router-dom';
-import * as ROUTES from '../../constants/routes';
-import '../../custom.css';
-import '../../fontawesome.js';
-import { anyBlank } from '../../services/arrayFunctions';
-import { signUp } from '../../store/actions/authActions';
-import { fetchMajors } from '../../store/actions/majorActions';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import React, { Component } from 'react'
+import Button from 'react-bootstrap/Button'
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import Card from 'react-bootstrap/Card'
+import Col from 'react-bootstrap/Col'
+import Form from 'react-bootstrap/Form'
+import { connect } from 'react-redux'
+import { LinkContainer } from 'react-router-bootstrap'
+import { Redirect } from 'react-router-dom'
+import * as ROUTES from '../../constants/routes'
+import '../../custom.css'
+import '../../fontawesome.js'
+import { anyBlank } from '../../services/arrayFunctions'
+import { signUp } from '../../store/actions/authActions'
+import { fetchMajors } from '../../store/actions/majorActions'
 
 class SignUp extends Component {
   state = {

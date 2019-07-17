@@ -1,7 +1,7 @@
-import React from 'react'
-import Nav from 'react-bootstrap/Nav'
-import * as ROUTES from '../../constants/routes'
-import { LinkContainer } from 'react-router-bootstrap'
+import React from 'react';
+import Nav from 'react-bootstrap/Nav';
+import { LinkContainer } from 'react-router-bootstrap';
+import * as ROUTES from '../../constants/routes';
 
 const NonAuthLinks = () => {
   return (

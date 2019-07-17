@@ -1,21 +1,20 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
-import Navigation from '../navigation/navigation'
-import About from '../../scenes/about/about'
-import SignUp from '../signup/signup'
-import SignIn from '../signin'
-import PasswordForgetPage from '../passwordforget'
-import ProfilePage from '../profile'
-import AdminPage from '../admin'
-import CompaniesPage from '../../scenes/companies/companies'
-import StudentsPage from '../../scenes/students/students'
-import TestBankPage from '../testbank/testBank'
-import TestUploadPage from '../testupload/testUpload'
-import Footer from '../footer/footer'
-import SubscribeFooter from '../subscribefooter'
-import ScrollToTop from '../scroll'
-
-import * as ROUTES from '../../constants/routes'
+import React, { Component } from 'react';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
+import About from '../../scenes/about/about';
+import AdminPage from '../../scenes/admin/admin';
+import CompaniesPage from '../../scenes/companies/companies';
+import PasswordForgetPage from '../../scenes/signup/passwordForget';
+import ProfilePage from '../../scenes/profile/profile';
+import SignIn from '../../scenes/signin/signIn';
+import SignUp from '../../scenes/signup/signUp';
+import StudentsPage from '../../scenes/students/students';
+import TestBankPage from '../../scenes/testbank/testBank';
+import TestUploadPage from '../../scenes/testupload/testUpload';
+import Footer from '../footer/footer';
+import Navigation from '../navigation/navigation';
+import ScrollToTop from '../scroll/scroll';
+import SubscribeFooter from '../subscribefooter/subscribefooter';
 
 class Root extends Component {
   render() {
