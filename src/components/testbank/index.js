@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import { SmallMasthead } from '../navigation'
+import { AuthUserContext, withAuthorization } from '../session';
+import * as ROUTES from '../../constants/routes';
+
+// react-bootstrap components
 import Table from 'react-bootstrap/Table';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -6,15 +11,12 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { LinkContainer } from 'react-router-bootstrap';
-
-import { SmallMasthead } from '../navigation'
-import { AuthUserContext, withAuthorization } from '../session';
-import * as ROUTES from '../../constants/routes';
 
 // fontawesome stuff
 import '../../fontawesome.js';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+// allows react router and bootstrap to play nicely
+import { LinkContainer } from 'react-router-bootstrap';
 
 class TestBankPage extends Component {
   constructor(props) {

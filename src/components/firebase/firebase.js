@@ -1,6 +1,7 @@
-import app from 'firebase/app';
+import * as app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import 'firebase/storage';
 
 const prodConfig = {
   apiKey: process.env.REACT_APP_PROD_API_KEY,
@@ -28,6 +29,7 @@ class Firebase {
 
     this.auth = app.auth();
     this.db = app.firestore();
+    this.storage = app.storage();
     this.majors_cached = null;
   }
 

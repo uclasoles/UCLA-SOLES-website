@@ -9,7 +9,6 @@ import { withFirebase } from '../firebase';
 import '../../custom.css';
 
 // react bootstrap components
-import Nav from 'react-bootstrap/Nav';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 
