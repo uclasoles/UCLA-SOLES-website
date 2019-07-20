@@ -9,6 +9,7 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 // fontawesome stuff
 import '../../fontawesome.js';
@@ -29,7 +30,10 @@ class TestUploadPage extends Component {
       dept: "",
       year: 0,
       quarter: "",
-      type: ""
+      type: "",
+
+      showFail: false,
+      showSuccess: false
     };
 
     this.setRef = ref => {
@@ -38,7 +42,18 @@ class TestUploadPage extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
+    this.handleCloseFail = this.handleCloseFail.bind(this);
+    this.handleShowFail = this.handleShowFail.bind(this);
+    this.handleCloseSuccess = this.handleCloseSuccess.bind(this);
+    this.handleShowSuccess = this.handleShowSuccess.bind(this);
   }
+
+
+  handleCloseFail = () => this.setState({showFail: false});
+  handleShowFail = () => this.setState({showFail: true});
+
+  handleCloseSuccess = () => this.setState({showSuccess: false});
+  handleShowSuccess = () => this.setState({showSuccess: true});
 
   handleChange(event) {
     this.setState({ [event.target.name] : event.target.value });
@@ -56,6 +71,11 @@ class TestUploadPage extends Component {
 
     // Create a variable holding a reference to Storage
     const storageRef = storage.ref();
+
+    if (this.file.files[0] == null) {
+      this.handleShowFail();
+      return;
+    }
 
     // Create a child element within storage where file will be uploaded
     const testFile = storageRef.child('tests/'+this.file.files[0].name);
@@ -92,9 +112,17 @@ class TestUploadPage extends Component {
           year: 0,
           quarter: "",
           type: ""
-        });
+        })
       })
+    })
+    .then(function() {
+    })
+    .catch(function(error) {
+        console.error("Error storing file: ", error);
+        thisComponent.handleShowFail();
     });
+
+    this.handleShowSuccess();
     
   }
 
@@ -116,6 +144,7 @@ class TestUploadPage extends Component {
                           <Form.Group as={Col}>
                               <Form.Label>Select a Department</Form.Label>
                               <Form.Control name="dept" as="select" onChange={this.handleChange} value={this.state.dept}>
+                                <option>None</option>
                                 <option>Math</option>
                                 <option>Physics</option>
                                 <option>Chemistry</option>
@@ -150,6 +179,7 @@ class TestUploadPage extends Component {
                           <Form.Group as={Col}>
                               <Form.Label>Year</Form.Label>
                               <Form.Control name="year" as="select" onChange={this.handleChange} value={this.state.year}>
+                                <option>None</option>
                                 <option>2019</option>
                                 <option>2018</option>
                                 <option>2017</option>
@@ -158,11 +188,19 @@ class TestUploadPage extends Component {
                                 <option>2014</option>
                                 <option>2013</option>
                                 <option>2012</option>
+                                <option>2011</option>
+                                <option>2010</option>
+                                <option>2009</option>
+                                <option>2008</option>
+                                <option>2007</option>
+                                <option>2006</option>
+                                <option>2005</option>
                               </Form.Control>
                           </Form.Group>
                           <Form.Group as={Col}>
                               <Form.Label>Quarter</Form.Label>
                               <Form.Control name="quarter" as="select" onChange={this.handleChange} value={this.state.quarter}>
+                                <option>None</option>
                                 <option>Fall</option>
                                 <option>Winter</option>
                                 <option>Spring</option>
@@ -171,6 +209,7 @@ class TestUploadPage extends Component {
                           <Form.Group as={Col}>
                               <Form.Label>Type</Form.Label>
                               <Form.Control name="type" as="select" onChange={this.handleChange} value={this.state.type}>
+                                <option>None</option>
                                 <option>Midterm 1</option>
                                 <option>Midterm 2</option>
                                 <option>Final</option>
@@ -200,6 +239,34 @@ class TestUploadPage extends Component {
                   </Card>
                 </Row>
               </Container>
+
+              <Modal show={this.state.showFail} onHide={this.handleCloseFail}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Upload Error</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Uh oh! Make sure to select a file before clicking 'Upload Test.'
+                  <br></br><br></br>
+                  Selected a file? This may be an error on our end. Please try again or contact an administrator
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={this.handleCloseFail}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
+              <Modal show={this.state.showSuccess} onHide={this.handleCloseSuccess}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Upload Succeeded!</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Thank you for your contribution to SOLES.</Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={this.handleCloseSuccess}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
           </div>
         )}
       </AuthUserContext.Consumer>
