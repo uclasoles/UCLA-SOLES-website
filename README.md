@@ -11,9 +11,9 @@ This repository contains the source code of the Society of Latino Engineers @ UC
 
 No installation is required to use this site. The currently hosted version of the website can be found [here](https://soles-website-dev.web.app/). Please note that the website is under construction and is not considered functional at this time.
 
-## Development Quick Set-Up
+## Quick Set-Up
 
-Before contributing to this repository, please see our Contributing Guidelines (add link to that here). The following is a quick set-up guide for this project:
+Before contributing to this repository, please the [Contributing](https://github.com/uclasoles/UCLA-SOLES-website/wiki/Contributing) page of our Wiki. The following is a quick set-up guide for this project:
 
 ```
 > git clone git@github.com:uclasoles/UCLA-SOLES-website.git soles-site-dev
@@ -21,7 +21,7 @@ Before contributing to this repository, please see our Contributing Guidelines (
 > npm install
 ```
 
-For more detailed information on setting up your development environment please see our Wiki (add link to the wiki here).
+For more detailed information on setting up your development environment please see the [Development Environment section of our Wiki](https://github.com/uclasoles/UCLA-SOLES-website/wiki/Development-Environment).
 
 ## Release History
 - Planned: 0.1.0 (October 1st, 2019)
