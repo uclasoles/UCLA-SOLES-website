@@ -17,7 +17,7 @@ No installation is required to use this site. The currently hosted version of th
 
 ## Quick Set-Up
 
-Before contributing to this repository, please the [Contributing](https://github.com/uclasoles/UCLA-SOLES-website/wiki/Contributing) page of our Wiki. The following is a quick set-up guide for this project:
+Before contributing to this repository and for more detailed set-up information, please see the [Contributing](https://github.com/uclasoles/UCLA-SOLES-website/wiki/Contributing) page of our Wiki. The following is a quick set-up guide for this project:
 
 ```
 > git clone git@github.com:uclasoles/UCLA-SOLES-website.git soles-site-dev
@@ -25,7 +25,9 @@ Before contributing to this repository, please the [Contributing](https://github
 > npm install
 ```
 
-For more detailed information on setting up your development environment please see the [Development Environment](https://github.com/uclasoles/UCLA-SOLES-website/wiki/Development-Environment) section of our Wiki.
+After running npm install, you will need to obtain a copy of our Firebase development credentials before you can host a local development version of the website. These credentials are obtainable by sending an email and name to kyleromero98@gmail.com . We may use this information to verify your identity as a SOLES member.
+
+Once obtaining your development credentials, you will be able to host a local version of the SOLES website by running npm start. Then, the website should be viewable at http://localhost:3000 .
 
 ## Release History
 - Planned: 0.1.0 (October 1st, 2019)
@@ -43,23 +45,6 @@ Kyle Romero - [@k_rommie](https://twitter.com/k_rommie) - kyleromero98@gmail.com
 Distributed under the MIT License. See `LICENSE` for more information.
 
 # Below this line is legacy information that will be moved to the Wiki and Contributing section of the project when that is written
-
-### Account and Tech Stack Info
-
-Hosting, authentication, database management, and storage are all managed through Firebase. This site was created using HTML, CSS, Javascript, React, and JQuery. Additionally, numerous npm packages are used for many features.
-
-### Development Environment Set-Up
-
-The following are general development environment set-up instructions:
-
-1. `git clone git@github.com:uclasoles/UCLA-SOLES-website.git soles-site-dev`
-2. `cd soles-site-dev`
-2. `npm install`
-3. Copy the `.env` file containing the site's Firebase credentials from the uclasoles.technicalchair@gmail.com Google Drive to the `soles-site-dev` directory. *Please see the following link if you encounter an issue copying this file from Google Drive to a Windows machine due to the '.' at the beginning of the name (Windows will automatically rename `.env` to `env`): https://www.oreilly.com/library/view/javascript-by-example/9781788293969/d34ba441-abb3-4937-acf1-a2e7d54ffb23.xhtml*.
-
-You should now be able to locally host the SOLES website. Running 'npm start' should result in the site being displayed at http://localhost:3000. 
-
-*Note: .env contains two sets of credentials, one for the Firebase development project and one for the Firebase production project. This is to isolate the development database entries from the production database entries.*
 
 ### Hosting the Production Version of the Site with Firebase
 
