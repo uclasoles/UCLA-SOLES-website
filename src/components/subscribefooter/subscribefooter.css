@@ -1,0 +1,27 @@
+#subscribe-footer {
+  padding: 20px;
+  background-image: url('https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,w_2000/v1557430586/ucla-header.png');
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 400px;
+  text-align: center;
+  color: white;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+#subscribe-footer:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
