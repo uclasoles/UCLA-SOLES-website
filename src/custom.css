@@ -40,13 +40,16 @@
   border-color: #fed136;
 }
 
-.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
   background-color: #fec810 !important;
   border-color: #fec810 !important;
   color: white;
 }
 
-.btn-primary:active, .btn-primary:focus {
+.btn-primary:active,
+.btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 }
 
@@ -162,7 +165,11 @@ h3.section-subheading {
   opacity: 1;
 }
 
-#sponsors .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+#sponsors
+  .portfolio-item
+  .portfolio-link
+  .portfolio-hover
+  .portfolio-hover-content {
   font-size: 20px;
   position: absolute;
   top: 50%;
@@ -173,12 +180,27 @@ h3.section-subheading {
   color: white;
 }
 
-#sponsors .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+#sponsors
+  .portfolio-item
+  .portfolio-link
+  .portfolio-hover
+  .portfolio-hover-content
+  i {
   margin-top: -12px;
 }
 
-#sponsors .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
-#sponsors .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+#sponsors
+  .portfolio-item
+  .portfolio-link
+  .portfolio-hover
+  .portfolio-hover-content
+  h3,
+#sponsors
+  .portfolio-item
+  .portfolio-link
+  .portfolio-hover
+  .portfolio-hover-content
+  h4 {
   margin: 0;
 }
 
@@ -213,37 +235,6 @@ h3.section-subheading {
 }
 
 /* subscribe footer styling */
-#subscribe-footer {
-  padding: 20px;
-  background-image: url('https://res.cloudinary.com/dzrbsvx06/image/upload/c_scale,w_2000/v1557430586/ucla-header.png');
-  background-size: cover;
-  background-position: center center;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  height: 300px;
-  text-align: center;
-  color: white;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-}
-
-#subscribe-footer:before {
-  content: '';
-  position: absolute;
-  width: 100%; height:100%;
-  top:0; left:0;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-#subscribe-footer #subscribe-form {
-  z-index: 100;
-  width: 700px;
-
-}
 
 /* footer styling */
 #footer {
@@ -311,7 +302,8 @@ h3.section-subheading {
   margin-bottom: 50px;
 }
 
-.timeline > li:after, .timeline > li:before {
+.timeline > li:after,
+.timeline > li:before {
   display: table;
   content: ' ';
 }
@@ -479,5 +471,3 @@ h3.section-subheading {
   font-size: 15px;
   font-style: italic;
 }
-
-
