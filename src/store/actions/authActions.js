@@ -65,3 +65,17 @@ export const resetPassword = (email) => {
     });
   }
 }
+
+export const changePassword = (newPassword) => {
+  return (dispatch, getState, {getFirebase}) => {
+    const firebase = getFirebase();
+
+    firebase.auth().currentUser.updatePassword(
+      newPassword
+    ).then(() => {
+      dispatch({ type: 'PASSWORD_CHANGE_SUCCESS' });
+    }).catch((err) => {
+      dispatch({ type: 'PASSWORD_CHANGE_ERROR', err});
+    });
+  }
+}

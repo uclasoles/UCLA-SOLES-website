@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom';
 import { SmallMasthead } from '../../components/navigation/navigation';
 import '../../custom.css';
-import PasswordChangeForm from './passwordChange';
+import ChangePasswordForm from './changePassword';
 
 class ProfilePage extends Component {
   constructor (props) {
@@ -22,7 +22,7 @@ class ProfilePage extends Component {
         <h1>My Account</h1>
         <Tabs defaultActiveKey="password_reset" transition={false} id='uncontrolled-tab-example'>
           <Tab eventKey="password_reset" title="Password Reset">
-            <PasswordChangeForm />
+            <ChangePasswordForm />
           </Tab>
           <Tab eventKey="my_tests" title="My Tests">
             <h2>My Tests</h2>

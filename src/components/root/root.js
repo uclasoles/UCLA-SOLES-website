@@ -26,7 +26,7 @@ class Root extends Component {
             <Route exact path={ROUTES.ABOUT} render={(props) => <About {...props} />}/>
             <Route exact path={ROUTES.SIGN_UP} render={(props) => <SignUp {...props} />} />
             <Route exact path={ROUTES.SIGN_IN} render={(props) => <SignIn {...props} />}/>
-            <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage}/>
+            <Route exact path={ROUTES.PASSWORD_FORGET} render={(props) => <PasswordForgetPage {...props} />}/>
             <Route exact path={ROUTES.PROFILE} render={(props) => <ProfilePage {...props} />}/>
             <Route exact path={ROUTES.ADMIN} component={AdminPage}/>
             <Route exact path={ROUTES.COMPANIES} component={CompaniesPage}/>
