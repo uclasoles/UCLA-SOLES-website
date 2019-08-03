@@ -49,6 +49,18 @@ const authReducer = (state = initState, action) => {
         ...state,
         authError: action.err.message
       }
+    case 'PASSWORD_CHANGE_SUCCESS':
+      console.log('Password reset success')
+      return {
+        ...state,
+        authError: 'success'
+      }
+    case 'PASSWORD_CHANGE_ERROR':
+      console.log(action.err.message)
+      return {
+        ...state,
+        authError: action.err.message
+      }
     default:
       return state
   }
