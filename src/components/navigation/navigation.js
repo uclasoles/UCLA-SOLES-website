@@ -7,8 +7,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 import * as ROUTES from '../../constants/routes';
 import '../../custom.css';
 import '../../fontawesome.js';
-import AuthLinks from './authLinks';
-import NonAuthLinks from './nonAuthLinks';
+import AuthLinks from './AuthLinks';
+import NonAuthLinks from './NonAuthLinks';
 
 class Navigation extends Component {
   constructor (props) {
