@@ -40,7 +40,7 @@ class SubscribeFooter extends Component {
                   <Form.Control name="email" value={email} onChange={this.onChange} type="email" placeholder="Email Address"/>
                 </Form.Group>
 
-                <Button type="submit" variant='primary' block>Sign In</Button>
+                <Button type="submit" variant='primary' block>Subscribe</Button>
               </Form>
             </Card.Body>
 					</Card>
